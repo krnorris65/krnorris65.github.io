@@ -82,4 +82,19 @@ nav li {
 .blog h3 {
     margin-bottom: 0;
 }
+
+.weekNum {
+    margin-bottom: 0;
+}
+.weekDate {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-weight: bold;
+    color: darkgreen;
+}
+
+footer {
+    margin-top: .5em;
+    color: darkgreen;
+}
 /* End formatting for Blog Page*/
