@@ -1,9 +1,85 @@
-.article {
-    border: 1px solid #ffdead;
-    color: goldenrod;
-
+body {
+    background-color: gainsboro;
+    color: navy;
 }
 
-#intro {
-    font-size: 2em;
+
+h1 {
+    color: indigo;
+    text-align: center;
 }
+
+/*Start link formatting*/
+:visited {
+    color: teal;
+}
+
+:link {
+    color: lightseagreen;
+}
+/*End link formatting */
+
+/*Start formatting for Navigation*/
+
+nav li {
+    list-style: none;
+    display: inline;
+}
+/*End formatting for Navigation*/
+
+/*Start formatting for Index Page */
+#cohort {
+    text-align: center;
+}
+
+.category {
+    color: darkgreen;
+}
+
+.response {
+    display: inline;
+}
+
+.favorites li {
+    list-style: square;
+
+}
+/*End formatting for Index Page */
+
+/*Formatting for Resume Page */
+.company {
+    margin-bottom: 0;
+}
+
+.title {
+    margin-top: 0;
+}
+/*End formatting for Resume Page*/
+
+/*Start formatting for Contact Page*/
+.social, .email {
+    list-style: none;
+}
+
+.contact, .social, .email {
+    text-align: center;
+}
+
+/*End formatting for Contact Page */
+
+/*Start formatting for Projects Page */
+.project {
+    border: 2px solid darkgreen;
+}
+/*End formatting for Projects Page */
+
+/* Start formatting for Blog Page*/
+.blog {
+    border: 2px solid darkgreen;
+    padding: 5px;
+}
+
+.blog h3 {
+    margin-bottom: 0;
+}
+/* End formatting for Blog Page*/
