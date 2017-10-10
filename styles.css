@@ -2,7 +2,7 @@ body {
     background-color: gainsboro;
     color: navy;
 }
-
+ 
 
 h1 {
     color: indigo;
@@ -21,9 +21,25 @@ h1 {
 
 /*Start formatting for Navigation*/
 
+nav {
+    text-align: center;
+    background-color: silver;
+    margin: 0px;
+    position: fixed;
+    top: 0;
+    width: 100%;  
+}
+
 nav li {
     list-style: none;
     display: inline;
+}
+nav li a {
+    margin: 0px 20px;
+}
+
+header {
+    margin-top: 55px;
 }
 /*End formatting for Navigation*/
 
@@ -42,7 +58,6 @@ nav li {
 
 .favorites li {
     list-style: square;
-
 }
 /*End formatting for Index Page */
 
@@ -96,5 +111,6 @@ nav li {
 footer {
     margin-top: .5em;
     color: darkgreen;
+    text-align: right;
 }
 /* End formatting for Blog Page*/
