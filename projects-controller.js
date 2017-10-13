@@ -1,24 +1,8 @@
-const personalSite = {
-    "name": "Personal Site", 
-    "date_completed": "in progress", 
-    "technologies_used": "HTML, CSS, JS", 
-    "teammates": "n/a",
-    "description": "description of project" 
-}
-
-//array of projects
-let projectsList = [];
-
-projectsList.push(personalSite);
-
-//stringify for storage
-const projectListString = JSON.stringify(projectsList);
-localStorage.setItem("projectList", projectListString);
-
 //populate project page using stored data
 const storedProjectList = JSON.parse(localStorage.getItem("projectList"));
 const projectsElement = document.getElementById("projects");
 
+//loop through projects array and insert them into projects.html
 for (let i = 0; i < storedProjectList.length; i++) {
         let project = storedProjectList[i];
         
@@ -32,6 +16,3 @@ for (let i = 0; i < storedProjectList.length; i++) {
         </article>
         `
     }
-
-
-    
