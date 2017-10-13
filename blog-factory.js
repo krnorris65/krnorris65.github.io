@@ -29,4 +29,4 @@ localStorage.setItem("blogPosts", blogPostsString);
 //parse to read
 let storedBlogPosts = JSON.parse(localStorage.getItem("blogPosts"));
 
-console.log(storedBlogPosts);
+console.log(storedBlogPosts); 
