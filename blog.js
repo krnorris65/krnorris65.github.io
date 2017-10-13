@@ -3,7 +3,18 @@ const week1 = {
     "date of publication": "2017-10-06", 
     "tags": "celebrations, inspirations, challenges, hang-ups", 
     "author": "Kristen",
-    "content": "Celebrations & Inspirations: Got to see Cohort 21 present their Front-End Capstone projects; Successfully set-up the framework for my personal site and connected it to GitHub; Was able to figure out the Overly Excited JavaScript exercise without feeling completely overwhelmed. Challenges & Hang-Ups: Remembering all of the commands for the terminal; Figuring out the best way to organize code;Not sure where to start with the Cash-to-Coin JavaScript exercise."
+    "content": {
+        "celebrations": {
+            "celebration_1": "Got to see Cohort 21 present their Front-End Capstone projects", 
+            "celebration_2": "Successfully set-up the framework for my personal site and connected it to GitHub",
+            "celebration_3": "Was able to figure out the Overly Excited JavaScript exercise without feeling completely overwhelmed"
+        },
+        "challenges": {
+            "challenges_1": "Remembering all of the commands for the terminal",
+            "challenges_2": "Figuring out the best way to organize code",
+            "challenges_3": "Not sure where to start with the Cash-to-Coin JavaScript exercise"
+        }
+    }
 }
 
 //array of weekly blogs
