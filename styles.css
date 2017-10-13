@@ -80,6 +80,10 @@ nav li a {
     text-align: center;
 }
 
+#send-email, #social-media {
+    padding-left: 0;
+}
+
 /*End formatting for Contact Page */
 
 /*Start formatting for Projects Page */
