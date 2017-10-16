@@ -19,10 +19,32 @@ const week1 = {
     }
 }
 
+const week2 = {
+    "title": "Week 2", 
+    "date_of_publication": "10-13-2017",
+    "week_num": "2",
+    "week_dates": "October 9 - 13, 2017", 
+    "tags": "celebrations, inspirations, challenges, hang-ups", 
+    "author": "Kristen",
+    "content": {
+        "celebrations": {
+            "celebration_1": "Finally figured out how to get the Cash-to-Coin exercise to work", 
+            "celebration_2": "Created a dynamic navigation bar for group project",
+            "celebration_3": "Successfully created a group website using GitHub"
+        },
+
+        "challenges": {
+            "challenge_1": "Figuring out how to include embedded Google Maps into the Contact Page of our group project",
+            "challenge_2": "Managed to accidently pull someone else’s branch into my feature branch",
+            "challenge_3": "All that is GitHub"
+        }
+    }
+}
 //array of weekly blogs
 let blogPosts = [];
 
 blogPosts.push(week1);
+blogPosts.unshift(week2);
 
 //stringify for storage
 let blogPostsString = JSON.stringify(blogPosts);
