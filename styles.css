@@ -62,6 +62,9 @@ nav li a {
 /*End formatting for Index Page */
 
 /*Formatting for Resume Page */
+.job {
+    border-bottom: 2px solid darkgreen;
+}
 .company {
     margin-bottom: 0;
 }

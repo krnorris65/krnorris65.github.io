@@ -14,8 +14,8 @@ for (let i = 0; i < storedJobList.length; i++) {
             <h3>${currentJob.startDate} - ${currentJob.endDate}</h3>
         </header>
         <section>
-            <p>${currentJob.summary}</p>
-            <p>${currentJob.responsibilities}</p>
+            <p class="summary"><b>Summary: </b>${currentJob.summary}</p>
+            <p class="responsibilities"><b>Responsibilities included: </b>${currentJob.responsibilities}</p>
         </section>
     </article>
     `
