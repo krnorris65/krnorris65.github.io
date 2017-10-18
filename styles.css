@@ -27,7 +27,9 @@ nav {
     margin: 0px;
     position: fixed;
     top: 0;
-    width: 100%;  
+    left: 0;
+    width: 100%;
+    box-shadow: 1px 2px 2px navy; 
 }
 
 nav li {
@@ -36,6 +38,18 @@ nav li {
 }
 nav li a {
     margin: 0px 20px;
+    padding: 1em 1em;
+    text-decoration: none;
+}
+
+nav li a:hover {
+    background-color: darkgray;
+    border-radius: 20%;
+}
+
+.active {
+    background-color: navy;
+    border-radius: 20%;
 }
 
 .page-header {
