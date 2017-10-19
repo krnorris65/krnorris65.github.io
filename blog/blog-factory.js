@@ -40,6 +40,7 @@ const week2 = {
         }
     }
 }
+
 //array of weekly blogs
 let blogPosts = [];
 

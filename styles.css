@@ -134,4 +134,14 @@ footer {
     color: darkgreen;
     text-align: right;
 }
+
+#blog-paginator > ul {
+    text-decoration: none;
+    text-align: center;
+
+}
+
+#blog-paginator li {
+    display: inline;
+}
 /* End formatting for Blog Page*/

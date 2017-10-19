@@ -33,4 +33,4 @@ for (let i = 0; i < storedBlogPosts.length; i++) {
     </footer>
     <!-- End of Blog Post ${currentBlog.week_num} -->
     `
-}
+} 
