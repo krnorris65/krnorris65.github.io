@@ -6,16 +6,16 @@ const week1 = {
     "tags": "celebrations, inspirations, challenges, hang-ups", 
     "author": "Kristen",
     "content": {
-        "celebrations": {
-            "celebration_1": "Got to see Cohort 21 present their Front-End Capstone projects", 
-            "celebration_2": "Successfully set-up the framework for my personal site and connected it to GitHub",
-            "celebration_3": "Was able to figure out the Overly Excited JavaScript exercise without feeling completely overwhelmed"
-        },
-        "challenges": {
-            "challenge_1": "Remembering all of the commands for the terminal",
-            "challenge_2": "Figuring out the best way to organize code",
-            "challenge_3": "Not sure where to start with the Cash-to-Coin JavaScript exercise"
-        }
+        "celebrations": [
+            "Got to see Cohort 21 present their Front-End Capstone projects", 
+            "Successfully set-up the framework for my personal site and connected it to GitHub",
+            "Was able to figure out the Overly Excited JavaScript exercise without feeling completely overwhelmed"
+        ],
+        "challenges": [
+            "Remembering all of the commands for the terminal",
+            "Figuring out the best way to organize code",
+            "Not sure where to start with the Cash-to-Coin JavaScript exercise"
+        ]
     }
 }
 
@@ -27,17 +27,16 @@ const week2 = {
     "tags": "celebrations, inspirations, challenges, hang-ups", 
     "author": "Kristen",
     "content": {
-        "celebrations": {
-            "celebration_1": "Finally figured out how to get the Cash-to-Coin exercise to work", 
-            "celebration_2": "Created a dynamic navigation bar for group project",
-            "celebration_3": "Successfully created a group website using GitHub"
-        },
-
-        "challenges": {
-            "challenge_1": "Figuring out how to include embedded Google Maps into the Contact Page of our group project",
-            "challenge_2": "Managed to accidently pull someone else’s branch into my feature branch",
-            "challenge_3": "All that is GitHub"
-        }
+        "celebrations": [
+            "Finally figured out how to get the Cash-to-Coin exercise to work", 
+            "Created a dynamic navigation bar for group project",
+            "Successfully created a group website using GitHub"
+        ],
+        "challenges": [
+            "Figuring out how to include embedded Google Maps into the Contact Page of our group project",
+            "Managed to accidently pull someone else’s branch into my feature branch",
+            "All that is GitHub"
+        ]
     }
 }
 

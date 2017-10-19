@@ -2,11 +2,13 @@
 let storedBlogPosts = JSON.parse(localStorage.getItem("blogPosts"));
 let blogElement = document.getElementById("blog-posts");
 
-//loop through blog array and insert blog posts into html
+
+//iterate through blog array and insert blog posts into DOM
 for (let i = 0; i < storedBlogPosts.length; i++) {
+    let finalBlogString = ""
     let currentBlog = storedBlogPosts[i];
     
-    blogElement.innerHTML += `
+    finalBlogString += `
     <!-- Beginning of Blog Post ${currentBlog.week_num} -->
     <article id="week-${currentBlog.week_num}" class="blog">
     <header>
@@ -16,16 +18,28 @@ for (let i = 0; i < storedBlogPosts.length; i++) {
     
     <section>
     <h3>Celebrations & Inspirations</h3>
-    <li>${currentBlog.content.celebrations.celebration_1}</li>
-    <li>${currentBlog.content.celebrations.celebration_2}</li>
-    <li>${currentBlog.content.celebrations.celebration_3}</li>
+    <ul>`
+
+    //iterates over celebration array
+    for (let j = 0; j < currentBlog.content.celebrations.length; j++) {
+        finalBlogString += `<li>${currentBlog.content.celebrations[j]}</li>`;
+    }
+    
+    finalBlogString += `
+    </ul>
     </section>
     
     <section>
     <h3>Challenges & Hang-Ups</h3>
-    <li>${currentBlog.content.challenges.challenge_1}</li>
-    <li>${currentBlog.content.challenges.challenge_2}</li>
-    <li>${currentBlog.content.challenges.challenge_3}</li>
+    <ul>`
+    
+    //iterates over challenges array
+    for (let s = 0; s < currentBlog.content.challenges.length; s++) {
+        finalBlogString += `<li>${currentBlog.content.challenges[s]}</li>`;
+    };
+   
+    finalBlogString += `
+    </ul>
     </section>
     
     <footer>
@@ -33,4 +47,6 @@ for (let i = 0; i < storedBlogPosts.length; i++) {
     </footer>
     <!-- End of Blog Post ${currentBlog.week_num} -->
     `
+    //update DOM
+    blogElement.innerHTML += finalBlogString;
 } 
