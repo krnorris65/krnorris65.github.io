@@ -3,109 +3,26 @@
         <title>Resume</title>
         <link href="styles.css" rel="stylesheet">
     </head>
-
+ 
     <body>
       <!--Start Navigation-->
       <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="resume.html">Resume</a></li>
-          <li><a href="contact.html">Contact</a></li>
-          <li><a href="projects.html">Projects</a></li>
-          <li><a href="blog.html">Blog</a></li>
+        <ul id="nav-items">
+          <!-- populated through database-->
         </ul>
       </nav>
       <!--End Navigation-->
       <header class="page-header">
         <h1>Job History for Kristen Norris</h1>
       </header>
-      <!-- Start of Job History-->
-      <div id="job-history">
-        <!-- Job 1-->  
-        <article id="Development-Specialist" class="job">
-          <header>
-            <h2 class="company">Monroe Harding (Nashville, TN)</h2>
-            <h2 class="title">Development Specialist</h2>
-              <h3><time datetime="2016-01-04">January 2016</time>-<time datetime="2017-10-06">October 2017</time></h3>
-          </header>
-          <section>
-            <ul>
-              <li>Tracked donations in Salesforce and ensures donors receive proper acknowledgement</li>
-              <li>Processed paperwork for volunteers including background checks and logging volunteer hours.</li>
-              <li>Assisted with marketing efforts including social media and mail appeals</li>
-              <li>Assisted with the fall fundraiser and created a registration process for the event</li>
-              <li>Helped create the Development Dashboard each month to report our progress to our Board of Directors</li>
-            </ul>
-          </section>
-        </article>
-        
-        <!-- Job 2--> 
-        <article id="Veteran-Case-Manager" class="job">
-          <header>
-            <h2 class="company">Room In The Inn (Nashville, TN)</h2> 
-            <h2 class="title">Veterans Case Manager</h2>
-              <h3><time datetime="2015-05-04">May 2015</time>-<time datetime="2015-11-13">November 2015</time></h3>
-          </header>
-          <section>
-            <ul>
-              <li>Assisted with the daily functions of the Veterans Per Diem Program and the Guest House Recovery Program (GHRP)</li>
-              <li>Tracked and reported client demographic information for grant purposes using Excel databases, ClientTrack and TN-WITS</li>
-              <li>Managed TN-WITS billing for GHRP and ensure that the maximum funds are used on a monthly basis </li>
-            </ul>
-          </section>
-        </article>
-        
-        <!-- Job 3--> 
-        <article id="Case-Manager" class="job">
-          <header>
-            <h2 class="company">Room In The Inn (Nashville, TN)</h2> 
-            <h2 class="title">Case Manager</h2>
-              <h3><time datetime="2013-08-05">August 2013</time>-<time datetime="2015-05-04">May 2015</time></h3>
-          </header>
-          <section>
-            <ul>
-              <li>Managed a caseload and referral services for homeless individuals in a facility serving over 300 people daily</li>
-              <li>Helped individuals in acquiring necessary documents for housing including: birth certificates, identification cards, and social security cards</li>
-              <li>Distributed funds for Emergency Services Grant. Maintained database in order to track individuals who received funds. Established a budget with individuals before they were able to receive funds, and followed up with landlords to ensure individuals were successfully transitioned into housing</li>
-              <li>Supervised and supported the day-to-day operations of the activity center including, but not limited to: sorting and distributing mail; running the morning shower and laundry program; and assisting with the lunch program</li>
-              <li>Complied a working document of the policies and procedures for the Support Desk</li>
-            </ul>
-          </section>
-        </article>
-        
-        <!-- Job 4--> 
-        <article id="Jesuit-Volunteer" class="job">
-          <header>
-            <h2 class="company">Room In The Inn (Nashville, TN)</h2> 
-            <h2 class="title">Jesuit Volunteer/Odyssey Assistant</h2>
-              <h3><time datetime="2012-08-15">August 2012</time>-<time datetime="2015-08-02">August 2013</time></h3>
-          </header>
-          <section>
-            <ul>
-              <li>Coordinated volunteers to create class schedules for the first 2 Phases of the program</li>
-              <li>Conducted morning meditation and community meeting</li>
-              <li>Planned community and volunteer activities for program participants</li>
-            </ul>
-          </section>
-        </article>
       
-        <!-- Job 5--> 
-        <article id="Program-Supervisor" class="job">
-          <header>
-            <h2 class="company">Re-Member (Pine Ridge, SD)</h2> 
-            <h2 class="title">Program Supervisor</h2>
-            <h3><time datetime="2012-06-29">June 2012</time>-<time datetime="2012-07-27">July 2012</time></h3>
-          </header>
-          <section>
-            <ul>
-              <li>Responsible for carrying out the weekly volunteer program</li>
-              <li>Aided Construction Supervisors in instructing volunteers on job sites</li>
-            </ul>
-          </section>
-        </article>
-      </div>
-    <!-- End of Job History-->
+      <section id="job-history">
+        <!-- populated through database -->
+      </section>
     
-    <script src="resume.js"></script>
+    <script src="navBar/nav-factory.js"></script>
+    <script src="navBar/nav-controller.js"></script>
+    <script src="resume/resume-factory.js"></script>
+    <script src="resume/resume-controller.js"></script>
     </body>
 </html>

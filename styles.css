@@ -27,7 +27,9 @@ nav {
     margin: 0px;
     position: fixed;
     top: 0;
-    width: 100%;  
+    left: 0;
+    width: 100%;
+    box-shadow: 1px 2px 2px navy; 
 }
 
 nav li {
@@ -36,6 +38,18 @@ nav li {
 }
 nav li a {
     margin: 0px 20px;
+    padding: 1em 1em;
+    text-decoration: none;
+}
+
+nav li a:hover {
+    background-color: darkgray;
+    border-radius: 20%;
+}
+
+.active {
+    background-color: navy;
+    border-radius: 20%;
 }
 
 .page-header {
@@ -62,6 +76,9 @@ nav li a {
 /*End formatting for Index Page */
 
 /*Formatting for Resume Page */
+.job {
+    border-bottom: 2px solid darkgreen;
+}
 .company {
     margin-bottom: 0;
 }
@@ -80,6 +97,10 @@ nav li a {
     text-align: center;
 }
 
+#send-email, #social-media {
+    padding-left: 0;
+}
+
 /*End formatting for Contact Page */
 
 /*Start formatting for Projects Page */
@@ -94,13 +115,10 @@ nav li a {
     padding: 5px;
 }
 
-.blog h3 {
+.blog h3, .weekNum {
     margin-bottom: 0;
 }
 
-.weekNum {
-    margin-bottom: 0;
-}
 .weekDate {
     margin-top: 0;
     margin-bottom: 0;
@@ -108,9 +126,18 @@ nav li a {
     color: darkgreen;
 }
 
-footer {
+.blog footer {
     margin-top: .5em;
     color: darkgreen;
     text-align: right;
+}
+ /* blog pagination formatting */
+#blog-paginator > ul {
+    text-decoration: none;
+    text-align: center;
+}
+
+#blog-paginator li {
+    display: inline;
 }
 /* End formatting for Blog Page*/

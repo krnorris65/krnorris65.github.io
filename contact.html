@@ -7,12 +7,8 @@
     <body>
         <!--Start Navigation-->
         <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="resume.html">Resume</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="blog.html">Blog</a></li>
+            <ul id="nav-items">
+                <!-- populated through database-->
             </ul>
         </nav>
         <!--End Navigation-->
@@ -21,16 +17,21 @@
         </header>
         
         <section>
-            <h4 class="contact">Send an email:</h4> 
+            <h4 class="contact">Send an email:</h4>
+            <ul id="send-email"> 
                 <li class="email"><a href="mailto:krnorris65@gmail.com">krnorris65@gmail.com</a></li>
+            </ul>
         </section>
-        <section>
+        <section >
             <h4 class="contact">Connect on social media:</h4>
-                    <li class="social"><a href="https://www.facebook.com/kris10norris">Facebook</a>             </li>
-                    <li class="social"><a href="https://www.instagram.com/kris10rose65/">Instagram</a></li>
-                    <li class="social"><a href="https://www.linkedin.com/in/kris10norris/">LinkedIn</a></li>
-            
+                <ul id="social-media">    
+                
+                </ul>
         </section>
-    <script src="contact.js"></script>
+    
+    <script src="navBar/nav-factory.js"></script>
+    <script src="navBar/nav-controller.js"></script>
+    <script src="contact/contact-factory.js"></script>
+    <script src="contact/contact-controller.js"></script>
     </body>
 </html>

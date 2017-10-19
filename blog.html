@@ -7,12 +7,8 @@
     <body>
         <!--Start Navigation-->
         <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="resume.html">Resume</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="blog.html">Blog</a></li>
+            <ul id="nav-items">
+                <!-- populated through database-->
             </ul>
         </nav>
         <!--End Navigation-->
@@ -20,61 +16,17 @@
              <h1>My Nashville Software School Experience</h1>
         </header>
 
-        <section>
-            <!--This is Blog Post 1 -->
-            <article id="week-one" class="blog">
-                <header>
-                    <h2 class="weekNum">Week 1</h2>
-                    <p class="weekDate"><time datetime="2017-10-02">October 2</time> - <time datetime="2017-10-06">6, 2017</time></p>
-                </header>
-        
-                <section>
-                    <h3>Celebrations & Inspirations</h3>
-                    <li>Got to see Cohort 21 present their Front-End Capstone projects</li>
-                    <li>Successfully set-up the framework for my personal site and connected it to GitHub</li>
-                    <li>Was able to figure out the Overly Excited JavaScript exercise without feeling completely overwhelmed</li>
-                </section>
-
-                <section>
-                    <h3>Challenges & Hang-Ups</h3>
-                    <li>Remembering all of the commands for the terminal</li>
-                    <li>Figuring out the best way to organize code</li>
-                    <li>Not sure where to start with the Cash-to-Coin JavaScript exercise</li>
-                </section>
-                
-                <footer>
-                <span>Posted by Kristen on <time datetime="2017-10-06">October 6, 2017</time></span>
-                </footer>
-            </article>
-            <!--End of Blog Post 1-->
-            
-            <!--This is Blog Post 2 -->
-            <!-- <article class="blog">
-                <header>
-                    <h2>Week 2</h2>
-                </header>
-                
-                <section>
-                    <h3>Celebrations & Inspirations</h3>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                </section>
-
-                <section>
-                    <h3>Challenges & Hang-Ups</h3>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                </section>
-                
-                <footer>
-                <span>Posted by AUTHOR on DATE</span>
-                </footer>
-            </article> -->
-            <!--End of Blog Post 1-->
+        <section id="blog-posts">
+            <!-- populated through database -->
         </section>
 
-    <script src="blog.js"></script>
+        <footer id="blog-paginator">
+
+        </footer>
+
+    <script src="navBar/nav-factory.js"></script>
+    <script src="navBar/nav-controller.js"></script>
+    <script src="blog/blog-factory.js"></script>
+    <script src="blog/blog-controller.js"></script>
     </body>
 </html>
