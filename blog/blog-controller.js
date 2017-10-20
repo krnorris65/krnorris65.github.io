@@ -35,16 +35,16 @@ function produceBlog(event) {
     
     //change class of previous arrow
     if ((currentPage - 1) === 0 ) { //if the current page -1 is 0 
-        previousEl.style.display = "none"; //then don't display previous arrow
+        previousEl.style.visibility = "hidden"; //then don't display previous arrow
     } else {
-        previousEl.style.display = "inline"; //if greater than 0 then display arrow 
+        previousEl.style.visibility = "inline"; //if greater than 0 then display arrow 
         previousEl.className = `page-${currentPage - 1}` //and add the class of the previous page
     }
     //change class of next arrow
         if ((currentPage + 1) > numberOfPages ) { //if the current page +1 is more than the total pages 
-            nextEl.style.display = "none"; //then don't display next arrow
+            nextEl.style.visibility = "hidden"; //then don't display next arrow
         } else {
-            nextEl.style.display = "inline"; //if less than total pages then display arrow 
+            nextEl.style.visibility = "inline"; //if less than total pages then display arrow 
             nextEl.className = `page-${currentPage + 1}` //and add the class of the next page
         }
 
