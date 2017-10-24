@@ -1,28 +1,28 @@
-const storedBlogPosts = JSON.parse(localStorage.getItem("blogPosts"));
-const totalItems = storedBlogPosts.length;
-const blogsPerPage = 5;
-const numberOfPages = Math.ceil(totalItems / blogsPerPage);
-const paginationEl = document.getElementById("blog-paginator");
-const blogEl = document.getElementById("blog-posts")
+const storedBlogPosts = JSON.parse(localStorage.getItem("blogPosts")); //getting blog info
+const totalItems = storedBlogPosts.length; //number of blog posts
+const blogsPerPage = 5; //number of blogs per page
+const numberOfPages = Math.ceil(totalItems / blogsPerPage); //how many pages needed, Math.ceil rounds up
+const paginationEl = document.getElementById("blog-paginator"); //write pagination to DOM
+const blogEl = document.getElementById("blog-posts") //write blogs to DOM
 
 // Build the DOM string for the pagination links in the footer
 let paginationString = "<ul>";
 paginationString += "<a id='previous' href='#'>&lt;</a>"; //generates previous button
 for (let i = 0; i < numberOfPages; i++) {
-    paginationString += ` <li><a class="blogPage page-${i+1}" href="#">${i+1}</a></li>` //generates each blog page button
+    paginationString += ` <li><a class="blogPage page-${i+1}" href="#">${i+1}</a></li>` //generates each blog page button and gives it a class of blogPage and page-#
 };
-paginationString += " <a id='next' class='page-2' href='#'>&gt;</a>"; //generates next button
+paginationString += " <a id='next' class='page-2' href='#'>&gt;</a>"; //generates next button, default class is page-2
 paginationString += "</ul>";
 
 paginationEl.innerHTML = paginationString; //add to DOM
 
 // references to the next and previous arrows
-const previousEl = document.getElementById("previous");
+const previousEl = document.getElementById("previous"); 
 const nextEl = document.getElementById("next");
 
 //function to invoke when user clicks pagination link at bottom of page
 function produceBlog(event) {
-    blogEl.innerHTML = ""; //clear inner htmml
+    blogEl.innerHTML = ""; //clear inner html for blog section
 
     //what did the user click
     const currentPage = parseInt ( //parse since the array will return a string
@@ -60,7 +60,7 @@ function produceBlog(event) {
         
         finalBlogString += `
             <!-- Beginning of Blog Post ${currentBlog.week_num} -->
-            <article id="week-${currentBlog.week_num}" class="blog">
+            <article id="blog-${currentBlog.id}" class="blog">
             <header>
             <h2 class="weekNum">${currentBlog.title}</h2>
             <p class="weekDate">${currentBlog.week_dates}</p>
@@ -71,8 +71,8 @@ function produceBlog(event) {
             <ul>`
     
         //iterates over celebration array
-        for (let j = 0; j < currentBlog.content.celebrations.length; j++) {
-            finalBlogString += `<li>${currentBlog.content.celebrations[j]}</li>`;
+        for (let j = 0; j < currentBlog.celebrations.length; j++) {
+            finalBlogString += `<li>${currentBlog.celebrations[j]}</li>`;
         }
         
         finalBlogString += `
@@ -84,8 +84,8 @@ function produceBlog(event) {
             <ul>`
         
         //iterates over challenges array
-        for (let s = 0; s < currentBlog.content.challenges.length; s++) {
-            finalBlogString += `<li>${currentBlog.content.challenges[s]}</li>`;
+        for (let s = 0; s < currentBlog.challenges.length; s++) {
+            finalBlogString += `<li>${currentBlog.challenges[s]}</li>`;
         };
        
         finalBlogString += `
@@ -93,7 +93,7 @@ function produceBlog(event) {
             </section>
             
             <footer>
-            <span>Posted by ${currentBlog.author} on ${currentBlog.date_of_publication}</time></span>
+            <span>Posted by ${currentBlog.author} on ${currentBlog.published}</time></span>
             </footer>
             <!-- End of Blog Post ${currentBlog.week_num} -->
             `
@@ -108,8 +108,8 @@ const blogLinks = document.getElementsByClassName("blogPage");
 // Add event listeners to each <a> element in the pagination
 for (let l = 0; l < blogLinks.length; l++) {
     let thisBlogLink = blogLinks[l];
-    thisBlogLink.addEventListener("click", produceBlog, false) //when pagination link is clicked, run produceBlog function
-}
+    thisBlogLink.addEventListener("click", produceBlog, false) //when pagination link is clicked, run produceBlog function 
+} 
 
 //default so that first page loads
 produceBlog({

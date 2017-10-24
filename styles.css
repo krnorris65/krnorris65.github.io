@@ -1,6 +1,9 @@
 body {
     background-color: gainsboro;
     color: navy;
+    padding: 1em;
+    width: 90%;
+    margin: 4em auto;
 }
  
 
@@ -37,8 +40,8 @@ nav li {
     display: inline;
 }
 nav li a {
-    margin: 0px 20px;
-    padding: 1em 1em;
+    margin: 0px 1.5em;
+    padding: 1em;
     text-decoration: none;
 }
 
@@ -47,13 +50,17 @@ nav li a:hover {
     border-radius: 20%;
 }
 
-.active {
+nav li a:active {
     background-color: navy;
     border-radius: 20%;
 }
 
+/* .active {
+    background-color: orange;
+} */
+
 .page-header {
-    margin-top: 55px;
+    margin-top: 40px;
 }
 /*End formatting for Navigation*/
 
