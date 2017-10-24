@@ -15,7 +15,7 @@
                     <h1>Create a Blog Post</h1>
             </header>
 
-            <form action="" id="blog-input-form">
+            <section id="blog-input-form">
                 <label for="form_title">Title</label>
                     <input type="text" name="title" id="form_title" placeholder="title">
                 <label for="form_published">Date Posted</label>
@@ -27,22 +27,15 @@
                 <label for="">Celebrations and Inspirations</label>
                     <button id="add-celebration">Add Celebration</button>
                     <div id="form_celebrations">
-                        <input type="text" name="celebration1" id="form_celebration_1">
-                        <input type="text" name="celebration2" id="form_celebration_2">
-                        <!-- <input type="text" name="celebration3" id="form_celebration_3">
-                        <input type="text" name="celebration4" id="form_celebration_4">
-                        <input type="text" name="celebration5" id="form_celebration_5"> -->
+                        <input type="text" name="celebration" id="form_celebration_1">
+
                     </div>
                 <label for="">Challenges and Hang-Ups</label>
                     <button id="add-challenge">Add Challenge</button>
                     <div id="form_challenges">
-                        <input type="text" name="challenges1" id="form_challenges_1">
-                        <!-- <input type="text" name="challenges2" id="form_challenges_2">
-                        <input type="text" name="challenges3" id="form_challenges_3">
-                        <input type="text" name="challenges4" id="form_challenges_4">
-                        <input type="text" name="challenges5" id="form_challenges_5"> -->
+                        <input type="text" name="challenges" id="form_challenge_1">
                     </div>
-            </form>
+                </section>
 <!-- 
             const newBlogObject = function (title, published, week_dates, author, celebrations, challenges, ...tags) {
                 return Object.create(null, {
