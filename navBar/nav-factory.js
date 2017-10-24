@@ -33,4 +33,4 @@ navBarArray.push(home, resume, contact, projects, blog);
 //stringify to localstorage
 const navBarString = JSON.stringify(navBarArray);
 
-localStorage.setItem("navBar", navBarString);
+localStorage.setItem("navBar", navBarString); 

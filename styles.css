@@ -55,9 +55,9 @@ nav li a:active {
     border-radius: 20%;
 }
 
-/* .active {
+.active {
     background-color: orange;
-} */
+}
 
 .page-header {
     margin-top: 40px;
