@@ -60,7 +60,7 @@ const week3 = newBlogObject("Week 3", "10-20-2017", "October 16 - 20, 2017", "Kr
         "Getting better at commenting my code so I know what I did when I look back at it later on"
     ], [
         "Understanding how to create pagination",
-        "Breaking my code by forgetting a parathesis in the Colored-Reindeer exercise",
+        "Breaking my code by forgetting a parenthesis in the Colored-Reindeer exercise",
         "Remembering everything"
     ], 
     "celebrations", "inspirations", "challenges", "hang-ups", "pagination", "NSS grad"
