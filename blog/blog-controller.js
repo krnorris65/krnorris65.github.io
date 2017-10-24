@@ -9,7 +9,7 @@ const blogEl = document.getElementById("blog-posts") //write blogs to DOM
 let paginationString = "<ul>";
 paginationString += "<a id='previous' href='#'>&lt;</a>"; //generates previous button
 for (let i = 0; i < numberOfPages; i++) {
-    paginationString += ` <li><a class="blogPage page-${i+1}" href="#">${i+1}</a></li>` //generates each blog page button and gives it a class of blogPage and page-#
+    paginationString += ` <li><a class="blogPage page-${i+1}" href="#">${i+1}</a></li>` //generates the correct number of blog page buttons and gives them a class of blogPage and page-#
 };
 paginationString += " <a id='next' class='page-2' href='#'>&gt;</a>"; //generates next button, default class is page-2
 paginationString += "</ul>";
@@ -54,9 +54,8 @@ function produceBlog(event) {
     const blogsToDisplay = storedBlogPosts.slice(begin, end);
 
     //iterate through blogsToDisplay and insert blog posts into DOM
-    for (let b = 0; b < blogsToDisplay.length; b++) {
+    blogsToDisplay.forEach(function(currentBlog) { 
         let finalBlogString = ""
-        let currentBlog = blogsToDisplay[b];
         
         finalBlogString += `
             <!-- Beginning of Blog Post ${currentBlog.week_num} -->
@@ -71,9 +70,9 @@ function produceBlog(event) {
             <ul>`
     
         //iterates over celebration array
-        for (let j = 0; j < currentBlog.celebrations.length; j++) {
-            finalBlogString += `<li>${currentBlog.celebrations[j]}</li>`;
-        }
+        currentBlog.celebrations.forEach(function(celebration) {
+            finalBlogString += `<li>${celebration}</li>`;
+        })
         
         finalBlogString += `
             </ul>
@@ -84,9 +83,9 @@ function produceBlog(event) {
             <ul>`
         
         //iterates over challenges array
-        for (let s = 0; s < currentBlog.challenges.length; s++) {
-            finalBlogString += `<li>${currentBlog.challenges[s]}</li>`;
-        };
+        currentBlog.challenges.forEach(function(challenge) {
+            finalBlogString += `<li>${challenge}</li>`;
+        })
        
         finalBlogString += `
             </ul>
@@ -99,7 +98,7 @@ function produceBlog(event) {
             `
         //update DOM
         blogEl.innerHTML += finalBlogString;
-    }
+    })
 }
 
 // Get the array of pagination anchor tags we added to the DOM
@@ -109,7 +108,7 @@ const blogLinks = document.getElementsByClassName("blogPage");
 for (let l = 0; l < blogLinks.length; l++) {
     let thisBlogLink = blogLinks[l];
     thisBlogLink.addEventListener("click", produceBlog, false) //when pagination link is clicked, run produceBlog function 
-} 
+}
 
 //default so that first page loads
 produceBlog({
