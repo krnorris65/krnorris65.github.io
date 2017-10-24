@@ -6,22 +6,22 @@ const home = {
 
 const resume = {
     "page" : "Resume",
-    "link" : "../resume.html"
+    "link" : "../resume/index.html"
 };
 
 const contact = {
     "page" : "Contact",
-    "link" : "../contact.html"
+    "link" : "../contact/index.html"
 };
 
 const projects = {
     "page" : "Projects",
-    "link" : "../projects.html"
+    "link" : "../projects/index.html"
 };
 
 const blog = {
     "page" : "Blog",
-    "link" : "../blog.html"
+    "link" : "../blog/index.html"
 };
 
 //objects into one array
