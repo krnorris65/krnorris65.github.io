@@ -1,0 +1,65 @@
+<html>
+    <head>
+        <title>Admin Blog</title>
+        <link rel="stylesheet" href="../styles.css">
+    </head>
+    <body>
+        <!--Start Navigation-->
+        <nav>
+                <ul id="nav-items">
+                    <!-- populated through database-->
+                </ul>
+            </nav>
+            <!--End Navigation-->
+            <header class="page-header">
+                    <h1>Create a Blog Post</h1>
+            </header>
+
+            <form action="" id="blog-input-form">
+                <label for="form_title">Title</label>
+                    <input type="text" name="title" id="form_title" placeholder="title">
+                <label for="form_published">Date Posted</label>
+                    <input type="date" name="published" id="form_published">
+                <label for="form_week">Dates of Week</label>
+                    <input type="text" name="week_dates" id="form_week" placeholder="MONTH mon - fri, YEAR">
+                <label for="form_author">Author</label>
+                    <input type="text" name="author" id="form_author" placeholder="First and Last Name">
+                <label for="">Celebrations and Inspirations</label>
+                    <button id="add-celebration">Add Celebration</button>
+                    <div id="form_celebrations">
+                        <input type="text" name="celebration1" id="form_celebration_1">
+                        <input type="text" name="celebration2" id="form_celebration_2">
+                        <!-- <input type="text" name="celebration3" id="form_celebration_3">
+                        <input type="text" name="celebration4" id="form_celebration_4">
+                        <input type="text" name="celebration5" id="form_celebration_5"> -->
+                    </div>
+                <label for="">Challenges and Hang-Ups</label>
+                    <button id="add-challenge">Add Challenge</button>
+                    <div id="form_challenges">
+                        <input type="text" name="challenges1" id="form_challenges_1">
+                        <!-- <input type="text" name="challenges2" id="form_challenges_2">
+                        <input type="text" name="challenges3" id="form_challenges_3">
+                        <input type="text" name="challenges4" id="form_challenges_4">
+                        <input type="text" name="challenges5" id="form_challenges_5"> -->
+                    </div>
+            </form>
+<!-- 
+            const newBlogObject = function (title, published, week_dates, author, celebrations, challenges, ...tags) {
+                return Object.create(null, {
+                    "id": { value: blogIdFactory.next().value, enumerable: true },
+                    "title": { value: title, enumerable: true },
+                    "published": { value: published, enumerable: true },
+                    "week_dates": { value: week_dates, enumerable: true }, 
+                    "author": { value: author, enumerable: true },
+                    "celebrations": { value: celebrations, enumerable: true },
+                    "challenges": { value: challenges, enumerable: true },
+                    "tags": { value: tags, enumerable: true }
+            
+                })
+            } -->
+
+        <script src="../navBar/nav-factory.js"></script>
+        <script src="../navBar/nav-controller.js"></script>
+        <script src="admin-blog.js"></script>
+    </body>
+</html>

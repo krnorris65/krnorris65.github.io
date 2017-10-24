@@ -148,3 +148,8 @@ nav li a:active {
     display: inline;
 }
 /* End formatting for Blog Page*/
+
+/* Blog Admin */
+#blog-input-form input {
+    display: block;
+}

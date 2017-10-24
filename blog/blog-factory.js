@@ -16,18 +16,17 @@ const newBlogObject = function (title, published, week_dates, author, celebratio
     return Object.create(null, {
         "id": { value: blogIdFactory.next().value, enumerable: true },
         "title": { value: title, enumerable: true },
-        "week_dates": { value: week_dates, enumerable: true }, 
         "published": { value: published, enumerable: true },
-        "tags": { value: tags, enumerable: true },
+        "week_dates": { value: week_dates, enumerable: true }, 
         "author": { value: author, enumerable: true },
         "celebrations": { value: celebrations, enumerable: true },
-        "challenges": { value: challenges, enumerable: true }
-
+        "challenges": { value: challenges, enumerable: true },
+        "tags": { value: tags, enumerable: true }
     })
 }
 
 // using the factory function to produce weekly blog articles
-const week1 = newBlogObject("Week 1", "10-06-2017", "October 2 - 6, 2017", "Kristen",
+const week1 = newBlogObject("Week 1", "10-06-2017", "October 2 - 6, 2017", "Kristen Norris",
     [
         "Got to see Cohort 21 present their Front-End Capstone projects", 
         "Successfully set-up the framework for my personal site and connected it to GitHub",
@@ -40,7 +39,7 @@ const week1 = newBlogObject("Week 1", "10-06-2017", "October 2 - 6, 2017", "Kris
     "celebrations", "inspirations", "challenges", "hang-ups", "personal site", "javascript"
 );
 
-const week2 = newBlogObject("Week 2", "10-13-2017", "October 9 - 13, 2017", "Kristen", 
+const week2 = newBlogObject("Week 2", "10-13-2017", "October 9 - 13, 2017", "Kristen Norris", 
     [
         "Finally figured out how to get the Cash-to-Coin exercise to work", 
         "Created a dynamic navigation bar for group project",
@@ -53,7 +52,7 @@ const week2 = newBlogObject("Week 2", "10-13-2017", "October 9 - 13, 2017", "Kri
     "celebrations", "inspirations", "challenges", "hang-ups", "github", "javascript" 
 );
 
-const week3 = newBlogObject("Week 3", "10-20-2017", "October 16 - 20, 2017", "Kristen",
+const week3 = newBlogObject("Week 3", "10-20-2017", "October 16 - 20, 2017", "Kristen Norris",
     [
         "Watched NSS grad, Aimee Knight’s talk about <a href='https://www.youtube.com/watch?v=B22o_yeDE_s' target='_blank'>“Getting Comfortable with being Uncomfortable”</a>",
         "Learning how to effectively work in a group to complete a challenge (pagination) that was given the day before the project was due",
