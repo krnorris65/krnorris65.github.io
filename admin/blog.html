@@ -15,7 +15,7 @@
                     <h1>Create a Blog Post</h1>
             </header>
 
-            <section id="blog-input-form">
+            <section id="form_new-blog">
                 <label for="form_title">Title</label>
                     <input type="text" name="title" id="form_title" placeholder="title">
                 <label for="form_published">Date Posted</label>
@@ -38,27 +38,16 @@
                     <div id="form_challenges">
                         <section id="form_challenge_1">
                             <input type="text" name="challenges">
-                            <button id="remove_challenges_1">Remove</button>
+                            <button id="remove_challenge_1">Remove</button>
                         </section>
                     </div>
-                </section>
-<!-- 
-            const newBlogObject = function (title, published, week_dates, author, celebrations, challenges, ...tags) {
-                return Object.create(null, {
-                    "id": { value: blogIdFactory.next().value, enumerable: true },
-                    "title": { value: title, enumerable: true },
-                    "published": { value: published, enumerable: true },
-                    "week_dates": { value: week_dates, enumerable: true }, 
-                    "author": { value: author, enumerable: true },
-                    "celebrations": { value: celebrations, enumerable: true },
-                    "challenges": { value: challenges, enumerable: true },
-                    "tags": { value: tags, enumerable: true }
-            
-                })
-            } -->
+            </section>
+                <button id="button_submit-blog">Submit Blog</button>
+
 
         <script src="../navBar/nav-factory.js"></script>
         <script src="../navBar/nav-controller.js"></script>
         <script src="admin-blog.js"></script>
+        <script src="blog-submit-controller.js"></script>
     </body>
 </html>

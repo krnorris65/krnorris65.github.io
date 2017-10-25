@@ -138,7 +138,7 @@ nav li a:active {
     color: darkgreen;
     text-align: right;
 }
- /* blog pagination formatting */
+/* blog pagination formatting */
 #blog-paginator > ul {
     text-decoration: none;
     text-align: center;
@@ -150,6 +150,10 @@ nav li a:active {
 /* End formatting for Blog Page*/
 
 /* Blog Admin */
-#blog-input-form input {
+#form_new-blog input {
     display: block;
+}
+#form_new-blog {
+    border: 2px solid darkgreen;
+    padding: 5px;
 }

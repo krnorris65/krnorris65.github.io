@@ -7,6 +7,7 @@ const idGen = function* () {
         id += 1
     }
 }
+//instances of generator function
 const celebrationIdFactory = idGen()
 const challengeIdFactory = idGen()
 
@@ -18,38 +19,59 @@ const challengeButton = document.getElementById("add-challenge")
 const celebrationEl = document.getElementById("form_celebrations")
 const challengeEl = document.getElementById("form_challenges")
 
-//functionality to add celebration button
-const addCelebration = function(){
-    const celebrationId = celebrationIdFactory.next().value
+//celebration DOM string
+const celebrationInput = function () {
+    const celebrationId = celebrationIdFactory.next().value //next value of generator function
     celebrationEl.innerHTML += `
-        <section id="form_celebration_${celebrationId}">
-            <input type="text" name="celebration">
-            <button id="remove_celebration_${celebrationId}">Remove</button>
-        </section>
-        `
+    <section id="form_celebration_${celebrationId}">
+    <input type="text" name="celebration">
+    <button id="remove_celebration_${celebrationId}">Remove</button>
+    </section>
+    ` //adds a section with an input field and remove button
 }
 
-//functionality to add challenge button
-const addChallenge = function(){
-    const challengeId = challengeIdFactory.next().value
+//challenges DOM string
+const challengeInput = function() {
+    const challengeId = challengeIdFactory.next().value //next value of generator function
     challengeEl.innerHTML += `
-        <section id="form_challenge_${challengeId}">
-            <input type="text" name="challenge">
-            <button id="remove_challenge_${challengeId}">Remove</button>
-        </section>
-    `
+    <section id="form_challenge_${challengeId}">
+        <input type="text" name="challenge">
+        <button id="remove_challenge_${challengeId}">Remove</button>
+    </section>
+    ` //adds a section with an input field and remove button
 }
 
-//functionality to delete button
-celebrationEl.addEventListener("click", function(event) { //target celebration element
-    const idOfButtonClicked = event.target.id
-    if(idOfButtonClicked.startsWith("remove_celebration_")) {
-        const buttonIdNum = idOfButtonClicked.split("_")[2] //split string to get numb from id
-        const inputSection = document.getElementById("form_celebration_" + buttonIdNum) //get input section with that num
-        celebrationEl.removeChild(inputSection) //remove input section
+// //functionality to add celebration/challenge button
+const addButton = function(event) {
+    const idOfAddButtonClicked = event.target.id //gets id of button clicked
+    const addButtonType = idOfAddButtonClicked.split("-")[1] //get type 'celebration' or 'challenge'. the beginning of both buttons is "add-"
+        if(addButtonType === "celebration") { //if type is celebration insert
+            celebrationInput()
+        } if(addButtonType === "challenge") {
+            challengeInput()
+        }
+}
 
+//functionality to remove button
+const removeButton = function(event) {
+    const idOfRemoveButtonClicked = event.target.id
+    if(idOfRemoveButtonClicked.startsWith("remove_")) {
+        const buttonType = idOfRemoveButtonClicked.split("_")[1] //get type 'celebration' or 'challenge'
+        const buttonIdNum = idOfRemoveButtonClicked.split("_")[2] //split string to get number from id
+        if(buttonType === "celebration") { //if type 'celebration' 
+            const celebrationSection = document.getElementById("form_celebration_" + buttonIdNum) //get that celebration input section
+            celebrationEl.removeChild(celebrationSection) //remove that celebration input section
+        } if(buttonType === "challenge") { //if type 'challenge'
+            const challengeSection = document.getElementById("form_challenge_" + buttonIdNum) //get that challenge input section
+            challengeEl.removeChild(challengeSection) //remove that challenge input section
+        }
     }
-})
+}
 
-celebrationButton.addEventListener("click", addCelebration)
-challengeButton.addEventListener("click", addChallenge)
+//add eventListener to both celebration and challenge buttons
+celebrationButton.addEventListener("click", addButton)
+challengeButton.addEventListener("click", addButton)
+
+//add eventListener to both celebration and challenge elements for remove button
+celebrationEl.addEventListener("click", removeButton)
+challengeEl.addEventListener("click", removeButton)
