@@ -20,26 +20,52 @@ const celebrationEl = document.getElementById("form_celebrations")
 const challengeEl = document.getElementById("form_challenges")
 
 //celebration DOM string
-const celebrationInput = function () {
+const celebrationInput = function() {
     const celebrationId = celebrationIdFactory.next().value //next value of generator function
-    celebrationEl.innerHTML += `
-    <section id="form_celebration_${celebrationId}">
-    <input type="text" name="celebration">
-    <button id="remove_celebration_${celebrationId}">Remove</button>
-    </section>
-    ` //adds a section with an input field and remove button
+    
+    const newCelSection = document.createElement("section") //create new section
+    newCelSection.id= `form_celebration_${celebrationId}` //add id to section
+    
+    const newCelInput = document.createElement("input") //create input
+    newCelInput.type = "text" //add type to input
+    newCelInput.name = "celebration" //add name to input
+    
+    
+    const newCelRemoveButton = document.createElement("button") //create remove button
+    newCelRemoveButton.id = `remove_celebration_${celebrationId}` //add id to button
+    newCelRemoveButton.appendChild(document.createTextNode("Remove")) //add text to button
+
+    newCelSection.appendChild(newCelInput) //append input to section
+
+    newCelSection.appendChild(newCelRemoveButton) //append button to section
+    
+    celebrationEl.appendChild(newCelSection)//append section to element
 }
+
 
 //challenges DOM string
 const challengeInput = function() {
     const challengeId = challengeIdFactory.next().value //next value of generator function
-    challengeEl.innerHTML += `
-    <section id="form_challenge_${challengeId}">
-        <input type="text" name="challenge">
-        <button id="remove_challenge_${challengeId}">Remove</button>
-    </section>
-    ` //adds a section with an input field and remove button
+    
+    const newChalSection = document.createElement("section") //create new section
+    newChalSection.id= `form_challenge_${challengeId}` //add id to section
+    
+    const newChalInput = document.createElement("input") //create input
+    newChalInput.type = "text" //add type to input
+    newChalInput.name = "challenge" //add name to input
+    
+    
+    const newChalRemoveButton = document.createElement("button") //create remove button
+    newChalRemoveButton.id = `remove_celebration_${challengeId}` //add id to button
+    newChalRemoveButton.appendChild(document.createTextNode("Remove")) //add text to button
+
+    newChalSection.appendChild(newChalInput) //append input to section
+
+    newChalSection.appendChild(newChalRemoveButton) //append button to section
+    
+    challengeEl.appendChild(newChalSection)//append section to element
 }
+
 
 // //functionality to add celebration/challenge button
 const addButton = function(event) {
