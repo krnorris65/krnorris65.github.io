@@ -23,7 +23,7 @@ const challengeEl = document.getElementById("form_challenges")
 const celebrationInput = function() {
     const celebrationId = celebrationIdFactory.next().value //next value of generator function
     
-    const newCelSection = document.createElement("section") //create new section
+    const newCelSection = document.createElement("section") //create new celebration input section
     newCelSection.id= `form_celebration_${celebrationId}` //add id to section
     
     const newCelInput = document.createElement("input") //create input
@@ -47,7 +47,7 @@ const celebrationInput = function() {
 const challengeInput = function() {
     const challengeId = challengeIdFactory.next().value //next value of generator function
     
-    const newChalSection = document.createElement("section") //create new section
+    const newChalSection = document.createElement("section") //create challenge input new section
     newChalSection.id= `form_challenge_${challengeId}` //add id to section
     
     const newChalInput = document.createElement("input") //create input
@@ -67,7 +67,7 @@ const challengeInput = function() {
 }
 
 
-// //functionality to add celebration/challenge button
+// //functionality to add celebration/challenge button. it is known that the id will start with 'add-'
 const addButton = function(event) {
     const idOfAddButtonClicked = event.target.id //gets id of button clicked
     const addButtonType = idOfAddButtonClicked.split("-")[1] //get type 'celebration' or 'challenge'. the beginning of both buttons is "add-"

@@ -15,7 +15,8 @@ const newBlogObject = function (title, published, week_dates, author, celebratio
 const newBlogEl = document.getElementById("form_new-blog");
 const submitButton = document.getElementById("button_submit-blog");
 
-
+const adminDatabase = JSON.parse(localStorage.getItem("adminBlogPosts")) || {}
+let adminBlogArray = []
 
 submitButton.addEventListener("click", function() {
     //values of form elements
@@ -31,8 +32,14 @@ submitButton.addEventListener("click", function() {
     const challengesVal = document.querySelectorAll("input[name='challenge']").forEach( input => {
         challengesArray.push(input.value)
     }) //gets all challenges and puts them into an array
-
+    
     const createBlog = newBlogObject(titleVal, publishedVal, weekVal, authorVal, celebrationsArray, challengesArray) //takes the values of the form elements and puts them into the newBlogObjectFunction
+    
+    adminBlogArray.unshift(createBlog)
 
-    console.log(createBlog)
+    let adminBlogPostsString = JSON.stringify(adminBlogArray);
+    localStorage.setItem("adminBlogPosts", adminBlogPostsString);
+
+    console.log(JSON.parse(localStorage.getItem("adminBlogPosts")))
 })
+
