@@ -1,5 +1,5 @@
-const storedBlogPosts = JSON.parse(localStorage.getItem("blogPosts")); //getting blog info
-const totalItems = storedBlogPosts.length; //number of blog posts
+const storedBlogPosts = JSON.parse(localStorage.getItem("adminDatabase")); //getting blog info
+const totalItems = storedBlogPosts.blog.length; //number of blog posts
 const blogsPerPage = 5; //number of blogs per page
 const numberOfPages = Math.ceil(totalItems / blogsPerPage); //how many pages needed, Math.ceil rounds up
 const paginationEl = document.getElementById("blog-paginator"); //write pagination to DOM
@@ -51,7 +51,7 @@ function produceBlog(event) {
     //determine blogs to display by slicing array
     const begin = (currentPage-1) * blogsPerPage; //current page minus one, then multiply by blogs per page
     const end = currentPage * blogsPerPage; //current page multiplied by blogs per page
-    const blogsToDisplay = storedBlogPosts.slice(begin, end);
+    const blogsToDisplay = storedBlogPosts.blog.slice(begin, end);
 
     //iterate through blogsToDisplay and insert blog posts into DOM
     blogsToDisplay.forEach(function(currentBlog) { 

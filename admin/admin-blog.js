@@ -1,5 +1,7 @@
+//this javascript file gives functionlity to the buttons within the Create Blog Form
+
 //generator function to create a unique id for the celebration/challenge created by user. starts at 2 since the first input is already on the page
-const idGen = function* () {
+const inputIdGen = function* () {
     let id = 2
     
     while (true) {
@@ -8,8 +10,8 @@ const idGen = function* () {
     }
 }
 //instances of generator function
-const celebrationIdFactory = idGen()
-const challengeIdFactory = idGen()
+const celebrationIdFactory = inputIdGen()
+const challengeIdFactory = inputIdGen()
 
 //get add celebration/challenge button
 const celebrationButton = document.getElementById("add-celebration")

@@ -1,6 +1,27 @@
+//pulls current info from local storage
+const adminDatabase = JSON.parse(localStorage.getItem("adminDatabase")) || {}
+
+//add key of blog if doesnt exist create an empty array
+adminDatabase.blog = adminDatabase.blog || []
+
+
+//id generator
+const blogIdGenerator = function* (num) {
+    let id = 1
+    while (true) {
+        yield num + id
+        id++
+    }
+}
+//get the id of the last blog object, if there is no last blog object set the id to 0
+const lastId = adminDatabase.blog[0] || { id: 0 }
+const blogIdFactory = blogIdGenerator(lastId.id) //takes the value of the last blog id and runs it through the generator function
+
+
+//object to create a new blog object
 const newBlogObject = function (title, published, week_dates, author, celebrations, challenges) {
     return Object.create(null, {
-        // "id": { value: blogIdFactory.next().value, enumerable: true },
+        "id": { value: blogIdFactory.next().value, enumerable: true },
         "title": { value: title, enumerable: true },
         "published": { value: published, enumerable: true },
         "week_dates": { value: week_dates, enumerable: true }, 
@@ -12,12 +33,10 @@ const newBlogObject = function (title, published, week_dates, author, celebratio
     })
 }
 
-const newBlogEl = document.getElementById("form_new-blog");
+//gets submit button
 const submitButton = document.getElementById("button_submit-blog");
 
-const adminDatabase = JSON.parse(localStorage.getItem("adminBlogPosts")) || {}
-let adminBlogArray = []
-
+//when even button is clicked, capture the information the user entered, create a blog object, add it to the beginning of the blog array(unshift), stringify and save to local storage
 submitButton.addEventListener("click", function() {
     //values of form elements
     const titleVal = document.getElementById("form_title").value
@@ -35,11 +54,10 @@ submitButton.addEventListener("click", function() {
     
     const createBlog = newBlogObject(titleVal, publishedVal, weekVal, authorVal, celebrationsArray, challengesArray) //takes the values of the form elements and puts them into the newBlogObjectFunction
     
-    adminBlogArray.unshift(createBlog)
+    adminDatabase.blog.unshift(createBlog)
 
-    let adminBlogPostsString = JSON.stringify(adminBlogArray);
-    localStorage.setItem("adminBlogPosts", adminBlogPostsString);
+    localStorage.setItem("adminDatabase", JSON.stringify(adminDatabase));
 
-    console.log(JSON.parse(localStorage.getItem("adminBlogPosts")))
+    console.log(JSON.parse(localStorage.getItem("adminDatabase")))
 })
 
