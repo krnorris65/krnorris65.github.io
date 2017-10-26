@@ -36,7 +36,7 @@ const week1 = newBlogObject("Week 1", "10-06-2017", "October 2 - 6, 2017", "Kris
         "Figuring out the best way to organize code",
         "Not sure where to start with the Cash-to-Coin JavaScript exercise"
     ], 
-    "celebrations", "inspirations", "challenges", "hang-ups", "personal site", "javascript"
+     "personal site", "javascript"
 );
 
 const week2 = newBlogObject("Week 2", "10-13-2017", "October 9 - 13, 2017", "Kristen Norris", 
@@ -49,7 +49,7 @@ const week2 = newBlogObject("Week 2", "10-13-2017", "October 9 - 13, 2017", "Kri
         "Managed to accidently pull someone else’s branch into my feature branch",
         "Dealing with pushing and pulling branches in GitHub"
     ], 
-    "celebrations", "inspirations", "challenges", "hang-ups", "github", "javascript" 
+     "github", "javascript" 
 );
 
 const week3 = newBlogObject("Week 3", "10-20-2017", "October 16 - 20, 2017", "Kristen Norris",
@@ -62,7 +62,7 @@ const week3 = newBlogObject("Week 3", "10-20-2017", "October 16 - 20, 2017", "Kr
         "Breaking my code by forgetting a parenthesis in the Colored-Reindeer exercise",
         "Remembering everything"
     ], 
-    "celebrations", "inspirations", "challenges", "hang-ups", "pagination", "NSS grad"
+     "pagination", "NSS grad"
 )
 
 //array of weekly blogs
