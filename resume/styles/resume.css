@@ -1,0 +1,12 @@
+/*Formatting for Resume Page */
+.job {
+    border-bottom: 2px solid darkgreen;
+}
+.company {
+    margin-bottom: 0;
+}
+
+.title {
+    margin-top: 0;
+}
+/*End formatting for Resume Page*/

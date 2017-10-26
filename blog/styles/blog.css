@@ -1,0 +1,32 @@
+/* Start formatting for Blog Page*/
+.blog {
+    border: 2px solid darkgreen;
+    padding: 5px;
+}
+
+.blog h3, .weekNum {
+    margin-bottom: 0;
+}
+
+.weekDate {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-weight: bold;
+    color: darkgreen;
+}
+
+.blog footer {
+    margin-top: .5em;
+    color: darkgreen;
+    text-align: right;
+}
+/* blog pagination formatting */
+#blog-paginator > ul {
+    text-decoration: none;
+    text-align: center;
+}
+
+#blog-paginator li {
+    display: inline;
+}
+/* End formatting for Blog Page*/

@@ -1,0 +1,91 @@
+body {
+    background-color: gainsboro;
+    color: navy;
+    padding: 1em;
+    width: 90%;
+    margin: 4em auto;
+}
+ 
+
+h1 {
+    color: indigo;
+    text-align: center;
+}
+
+/*Start link formatting*/
+:visited {
+    color: teal;
+}
+
+:link {
+    color: lightseagreen;
+}
+/*End link formatting */
+
+/*Start formatting for Navigation*/
+
+nav {
+    text-align: center;
+    background-color: silver;
+    margin: 0px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-shadow: 1px 2px 2px navy; 
+}
+
+nav li {
+    list-style: none;
+    display: inline;
+}
+nav li a {
+    margin: 0px 1.5em;
+    padding: 1em;
+    text-decoration: none;
+}
+
+nav li a:hover {
+    background-color: darkgray;
+    border-radius: 20%;
+}
+
+nav li a:active {
+    background-color: navy;
+    border-radius: 20%;
+}
+
+.active {
+    background-color: orange;
+}
+
+.page-header {
+    margin-top: 40px;
+}
+/*End formatting for Navigation*/
+
+/*Start formatting for Index Page */
+#cohort {
+    text-align: center;
+}
+
+.category {
+    color: darkgreen;
+}
+
+.response {
+    display: inline;
+}
+
+.favorites li {
+    list-style: square;
+}
+/*End formatting for Index Page */
+
+
+
+
+
+
+
+
