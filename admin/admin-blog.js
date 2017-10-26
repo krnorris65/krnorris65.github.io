@@ -58,7 +58,7 @@ const challengeInput = function() {
     
     
     const newChalRemoveButton = document.createElement("button") //create remove button
-    newChalRemoveButton.id = `remove_celebration_${challengeId}` //add id to button
+    newChalRemoveButton.id = `remove_challenge_${challengeId}` //add id to button
     newChalRemoveButton.appendChild(document.createTextNode("Remove")) //add text to button
 
     newChalSection.appendChild(newChalInput) //append input to section

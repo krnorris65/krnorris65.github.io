@@ -152,8 +152,20 @@ nav li a:active {
 /* Blog Admin */
 #form_new-blog input {
     display: block;
+    height: 25px;
 }
 #form_new-blog {
     border: 2px solid darkgreen;
     padding: 5px;
+
+}
+
+#form_celebrations input, #form_challenges input, #form_tags {
+    width: 80%;
+    display: inline;
+}
+
+label {
+    display: block;
+    padding-top: 5px;
 }
