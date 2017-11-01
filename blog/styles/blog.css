@@ -29,4 +29,9 @@
 #blog-paginator li {
     display: inline;
 }
+
+.blogPage:disabled {
+    color: orange;
+    font-size: 1.5em;
+}
 /* End formatting for Blog Page*/

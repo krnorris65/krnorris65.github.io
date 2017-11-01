@@ -19,9 +19,9 @@ const blogIdFactory = blogIdGenerator(lastId.id) //takes the value of the last b
 
 
 //object to create a new blog object
-const newBlogObject = function (title, published, week_dates, author, celebrations, challenges, ...tags) {
+const newBlogObject = function (id, title, published, week_dates, author, celebrations, challenges, ...tags) {
     return Object.create(null, {
-        "id": { value: blogIdFactory.next().value, enumerable: true },
+        "id": { value: (id === null) ? blogIdFactory.next().value : id, enumerable: true },
         "title": { value: title, enumerable: true },
         "published": { value: published, enumerable: true },
         "week_dates": { value: week_dates, enumerable: true }, 
@@ -53,6 +53,7 @@ const clearButton = document.getElementById("button_clear-blog");
 //when even button is clicked, capture the information the user entered, create a blog object, add it to the beginning of the blog array(unshift), stringify and save to local storage
 submitButton.addEventListener("click", function() {
     //values of form elements
+    const idVal = null
     const titleVal = document.getElementById("form_title").value
     const publishedVal = document.getElementById("form_published").value
     const weekVal = document.getElementById("form_week").value
@@ -67,7 +68,7 @@ submitButton.addEventListener("click", function() {
     }) //gets all challenges and puts them into an array
     const tagsVal = document.getElementById("form_tags").value
     
-    const createBlog = newBlogObject(titleVal, publishedVal, weekVal, authorVal, celebrationsArray, challengesArray, tagsVal.split(",")) //takes the values of the form elements and puts them into the newBlogObjectFunction
+    const createBlog = newBlogObject(idVal, titleVal, publishedVal, weekVal, authorVal, celebrationsArray, challengesArray, tagsVal.split(",")) //takes the values of the form elements and puts them into the newBlogObjectFunction
     
     adminDatabase.blog.unshift(createBlog)
 
