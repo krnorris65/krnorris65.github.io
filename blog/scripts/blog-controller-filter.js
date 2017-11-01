@@ -106,14 +106,14 @@ if(totalItems > 0) { //if there are blog posts, then put them on the blog page
             nextEl.className = `page-${currentPage + 1}` //and add the class of the next page
         }
 
-        let blogNumberButton = document.getElementsByClassName("blogPage")
-        for (let i = 0; i < blogNumberButton.length; i++) {
-            if(currentPage === blogNumberButton[i].value) {
-                blogNumberButton[i].disabled = true
-            } else {
-                blogNumberButton[i].disabled = false
-            }
-        }
+        // let blogNumberButton = document.getElementsByClassName("blogPage")
+        // for (let i = 0; i < blogNumberButton.length; i++) {
+        //     if(currentPage === blogNumberButton[i]) {
+        //         blogNumberButton[i].disabled = true
+        //     } else {
+        //         blogNumberButton[i].disabled = false
+        //     }
+        // }
 
         //determine blogs to display by slicing array
         const begin = (currentPage-1) * blogsPerPage; //current page minus one, then multiply by blogs per page
