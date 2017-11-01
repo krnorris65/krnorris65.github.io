@@ -1,60 +1,12 @@
-const storedBlogPosts = JSON.parse(localStorage.getItem("adminDatabase")); //getting blog info
-const totalItems = storedBlogPosts.blog.length; //number of blog posts
+const storedAdminDatabase = JSON.parse(localStorage.getItem("adminDatabase")); //getting blog info
+const totalItems = storedAdminDatabase.blog.length; //number of blog posts
 const blogsPerPage = 5; //number of blogs per page
 const numberOfPages = Math.ceil(totalItems / blogsPerPage); //how many pages needed, Math.ceil rounds up
 const paginationEl = document.getElementById("blog-paginator"); //write pagination to DOM
 const blogEl = document.getElementById("blog-posts") //write blogs to DOM
 
 
-//create blog entry function
-const createBlogEntry = function(currentBlog) { 
-    let finalBlogString = ""
-    
-    finalBlogString += `
-        <!-- Beginning of Blog Post ${currentBlog.week_num} -->
-        <article id="blog-${currentBlog.id}" class="blog">
-        <header>
-        <h2 class="weekNum">${currentBlog.title}</h2>
-        <p class="weekDate">${currentBlog.week_dates}</p>
-        </header>
-        
-        <section>
-        <h3>Celebrations & Inspirations</h3>
-        <ul>`
-
-    //iterates over celebration array
-    currentBlog.celebrations.forEach(function(celebration) {
-        finalBlogString += `<li>${celebration}</li>`;
-    })
-    
-    finalBlogString += `
-        </ul>
-        </section>
-        
-        <section>
-        <h3>Challenges & Hang-Ups</h3>
-        <ul>`
-    
-    //iterates over challenges array
-    currentBlog.challenges.forEach(function(challenge) {
-        finalBlogString += `<li>${challenge}</li>`;
-    })
-   
-    finalBlogString += `
-        </ul>
-        </section>
-        
-        <footer>
-        <span>Posted by ${currentBlog.author} on ${currentBlog.published}</time></span>
-        </footer>
-        <!-- End of Blog Post ${currentBlog.week_num} -->
-        `
-    //update DOM
-    blogEl.innerHTML += finalBlogString;
-}
-
-
-
+/*Beginning of Pagination */
 // Build the DOM string for the pagination links in the footer
 let paginationString = "<ul>";
 paginationString += "<a id='previous' href='#'>&lt;</a>"; //generates previous button
@@ -74,6 +26,7 @@ const nextEl = document.getElementById("next");
 function produceBlog(event) {
     blogEl.innerHTML = ""; //clear inner html for blog section
 
+
     //what did the user click
     const currentPage = parseInt ( //parse since the array will return a string
         Array.from(event.target.classList) //target classes on the clicked pagination link
@@ -87,25 +40,102 @@ function produceBlog(event) {
     if ((currentPage - 1) === 0 ) { //if the current page -1 is 0 
         previousEl.style.visibility = "hidden"; //then don't display previous arrow
     } else {
-        previousEl.style.visibility = "inline"; //if greater than 0 then display arrow 
+        previousEl.style.visibility = "visible"; //if greater than 0 then display arrow 
         previousEl.className = `page-${currentPage - 1}` //and add the class of the previous page
     }
     //change class of next arrow
-        if ((currentPage + 1) > numberOfPages ) { //if the current page +1 is more than the total pages 
-            nextEl.style.visibility = "hidden"; //then don't display next arrow
-        } else {
-            nextEl.style.visibility = "inline"; //if less than total pages then display arrow 
-            nextEl.className = `page-${currentPage + 1}` //and add the class of the next page
-        }
+    if ((currentPage + 1) > numberOfPages ) { //if the current page +1 is more than the total pages 
+        nextEl.style.visibility = "hidden"; //then don't display next arrow
+    } else {
+        nextEl.style.visibility = "visible"; //if less than total pages then display arrow 
+        nextEl.className = `page-${currentPage + 1}` //and add the class of the next page
+    }
 
     //determine blogs to display by slicing array
     const begin = (currentPage-1) * blogsPerPage; //current page minus one, then multiply by blogs per page
     const end = currentPage * blogsPerPage; //current page multiplied by blogs per page
-    const blogsToDisplay = storedBlogPosts.blog.slice(begin, end);
+    const blogsToDisplay = storedAdminDatabase.blog.slice(begin, end);
 
     //iterate through blogsToDisplay and inserts blog entry into DOM
-    blogsToDisplay.forEach(createBlogEntry())
-}
+    blogsToDisplay.forEach(function(currentBlog) { 
+        let finalBlogString = ""
+        
+        finalBlogString += `
+            <!-- Beginning of Blog Post ${currentBlog.title} -->
+            <article id="blog-${currentBlog.id}" class="blog">
+            <header>
+            <h2 class="weekNum">${currentBlog.title}</h2>
+            <p class="weekDate">${currentBlog.week_dates}</p>
+            </header>
+            
+            <section>
+            <h3>Celebrations & Inspirations</h3>
+            <ul>`
+    
+        //iterates over celebration array
+        currentBlog.celebrations.forEach(function(celebration) {
+            finalBlogString += `<li>${celebration}</li>`;
+        })
+        
+        finalBlogString += `
+            </ul>
+            </section>
+            
+            <section>
+            <h3>Challenges & Hang-Ups</h3>
+            <ul>`
+        
+        //iterates over challenges array
+        currentBlog.challenges.forEach(function(challenge) {
+            finalBlogString += `<li>${challenge}</li>`;
+        })
+        
+        finalBlogString += `
+            </ul>
+            </section>
+            
+            <footer>
+            <span>Posted by ${currentBlog.author} on ${currentBlog.published}</time></span>
+            </footer>
+            <!-- End of Blog Post ${currentBlog.week_num} -->
+            `
+        //update DOM
+        blogEl.innerHTML += finalBlogString;
+    })
+
+    //filter blog pages
+    document.querySelector("input[name='blogFilter']").addEventListener(
+        "keyup",
+        event => {
+            if(event.target.value.length >= 3) {
+                //Filter 
+                const userFilterString = event.target.value.toLowerCase()
+
+                const filteredBlogs = storedAdminDatabase.blog.filter(
+                    blog => {
+                        return blog.title.toLowerCase().includes(userFilterString) || 
+                        blog.celebrations.filter(
+                            celebration => {
+                                celebration.toLowerCase().includes(userFilterString)
+                            }) || 
+                        blog.challenges.filter(
+                            challenge => {
+                                challenge.toLowerCase().includes(userFilterString)
+                            })
+                            
+                    }
+                )
+
+                blogEl.innerHTML = ""
+
+
+           
+            }
+        }
+    )
+    //end of blog filter
+
+}//end of produce blog function
 
 // Get the array of pagination anchor tags we added to the DOM
 const blogLinks = document.getElementsByClassName("blogPage");
@@ -126,27 +156,9 @@ produceBlog({
 //event listeners for previous and next elements
 previousEl.addEventListener("click", produceBlog, false);
 nextEl.addEventListener("click", produceBlog, false);
+/*End of Pagination */
 
 
-//filter blog pages
-
-//convert to fit my blog setup
-document.querySelector("input[name='articleFilter']").addEventListener(
-    "keyup",
-    event => {
-        if(event.target.value.length >= 3) {
-            //Filter 
-            const userFilterString = event.target.value.toLowerCase()
-
-            const filteredArticles = adminDatabase.blog.filter(
-                blog => {
-                    return blog.title.toLowerCase.includes(userFilterString) || 
-                        blog.body.includes(userFilterString)
-                }
-            )
-        }
-    }
-)
 
 /*
 clear innerHTML
