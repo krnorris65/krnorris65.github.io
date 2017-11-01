@@ -5,6 +5,56 @@ const numberOfPages = Math.ceil(totalItems / blogsPerPage); //how many pages nee
 const paginationEl = document.getElementById("blog-paginator"); //write pagination to DOM
 const blogEl = document.getElementById("blog-posts") //write blogs to DOM
 
+
+//create blog entry function
+const createBlogEntry = function(currentBlog) { 
+    let finalBlogString = ""
+    
+    finalBlogString += `
+        <!-- Beginning of Blog Post ${currentBlog.week_num} -->
+        <article id="blog-${currentBlog.id}" class="blog">
+        <header>
+        <h2 class="weekNum">${currentBlog.title}</h2>
+        <p class="weekDate">${currentBlog.week_dates}</p>
+        </header>
+        
+        <section>
+        <h3>Celebrations & Inspirations</h3>
+        <ul>`
+
+    //iterates over celebration array
+    currentBlog.celebrations.forEach(function(celebration) {
+        finalBlogString += `<li>${celebration}</li>`;
+    })
+    
+    finalBlogString += `
+        </ul>
+        </section>
+        
+        <section>
+        <h3>Challenges & Hang-Ups</h3>
+        <ul>`
+    
+    //iterates over challenges array
+    currentBlog.challenges.forEach(function(challenge) {
+        finalBlogString += `<li>${challenge}</li>`;
+    })
+   
+    finalBlogString += `
+        </ul>
+        </section>
+        
+        <footer>
+        <span>Posted by ${currentBlog.author} on ${currentBlog.published}</time></span>
+        </footer>
+        <!-- End of Blog Post ${currentBlog.week_num} -->
+        `
+    //update DOM
+    blogEl.innerHTML += finalBlogString;
+}
+
+
+
 // Build the DOM string for the pagination links in the footer
 let paginationString = "<ul>";
 paginationString += "<a id='previous' href='#'>&lt;</a>"; //generates previous button
@@ -53,52 +103,8 @@ function produceBlog(event) {
     const end = currentPage * blogsPerPage; //current page multiplied by blogs per page
     const blogsToDisplay = storedBlogPosts.blog.slice(begin, end);
 
-    //iterate through blogsToDisplay and insert blog posts into DOM
-    blogsToDisplay.forEach(function(currentBlog) { 
-        let finalBlogString = ""
-        
-        finalBlogString += `
-            <!-- Beginning of Blog Post ${currentBlog.week_num} -->
-            <article id="blog-${currentBlog.id}" class="blog">
-            <header>
-            <h2 class="weekNum">${currentBlog.title}</h2>
-            <p class="weekDate">${currentBlog.week_dates}</p>
-            </header>
-            
-            <section>
-            <h3>Celebrations & Inspirations</h3>
-            <ul>`
-    
-        //iterates over celebration array
-        currentBlog.celebrations.forEach(function(celebration) {
-            finalBlogString += `<li>${celebration}</li>`;
-        })
-        
-        finalBlogString += `
-            </ul>
-            </section>
-            
-            <section>
-            <h3>Challenges & Hang-Ups</h3>
-            <ul>`
-        
-        //iterates over challenges array
-        currentBlog.challenges.forEach(function(challenge) {
-            finalBlogString += `<li>${challenge}</li>`;
-        })
-       
-        finalBlogString += `
-            </ul>
-            </section>
-            
-            <footer>
-            <span>Posted by ${currentBlog.author} on ${currentBlog.published}</time></span>
-            </footer>
-            <!-- End of Blog Post ${currentBlog.week_num} -->
-            `
-        //update DOM
-        blogEl.innerHTML += finalBlogString;
-    })
+    //iterate through blogsToDisplay and inserts blog entry into DOM
+    blogsToDisplay.forEach(createBlogEntry())
 }
 
 // Get the array of pagination anchor tags we added to the DOM
@@ -120,3 +126,34 @@ produceBlog({
 //event listeners for previous and next elements
 previousEl.addEventListener("click", produceBlog, false);
 nextEl.addEventListener("click", produceBlog, false);
+
+
+//filter blog pages
+
+//convert to fit my blog setup
+document.querySelector("input[name='articleFilter']").addEventListener(
+    "keyup",
+    event => {
+        if(event.target.value.length >= 3) {
+            //Filter 
+            const userFilterString = event.target.value.toLowerCase()
+
+            const filteredArticles = adminDatabase.blog.filter(
+                blog => {
+                    return blog.title.toLowerCase.includes(userFilterString) || 
+                        blog.body.includes(userFilterString)
+                }
+            )
+        }
+    }
+)
+
+/*
+clear innerHTML
+
+filteredArticles.forEach(
+    insert into DOM
+)
+ if less than three characters then clear innerHTML and show all articles
+
+*/
