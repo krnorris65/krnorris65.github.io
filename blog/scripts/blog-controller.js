@@ -103,37 +103,7 @@ function produceBlog(event) {
         blogEl.innerHTML += finalBlogString;
     })
 
-    //filter blog pages
-    document.querySelector("input[name='blogFilter']").addEventListener(
-        "keyup",
-        event => {
-            if(event.target.value.length >= 3) {
-                //Filter 
-                const userFilterString = event.target.value.toLowerCase()
 
-                const filteredBlogs = storedAdminDatabase.blog.filter(
-                    blog => {
-                        return blog.title.toLowerCase().includes(userFilterString) || 
-                        blog.celebrations.filter(
-                            celebration => {
-                                celebration.toLowerCase().includes(userFilterString)
-                            }) || 
-                        blog.challenges.filter(
-                            challenge => {
-                                challenge.toLowerCase().includes(userFilterString)
-                            })
-                            
-                    }
-                )
-
-                blogEl.innerHTML = ""
-
-
-           
-            }
-        }
-    )
-    //end of blog filter
 
 }//end of produce blog function
 
@@ -158,7 +128,45 @@ previousEl.addEventListener("click", produceBlog, false);
 nextEl.addEventListener("click", produceBlog, false);
 /*End of Pagination */
 
+    //filter blog pages
+    document.querySelector("input[name='blogFilter']").addEventListener(
+        "keyup",
+        event => {
+            if(event.target.value.length >= 3) {
+                //Filter 
+                const userFilterString = event.target.value.toLowerCase()
 
+                const blogsFilter = storedAdminDatabase.blog.filter(
+                    filteredBlog => {
+                        return filteredBlog.title.toLowerCase().includes(userFilterString) || //look through titles
+                            filteredBlog.celebrations.filter( //iterate over the celebrations array
+                                filterCelebration => {
+                                    return filterCelebration.toLowerCase().includes(userFilterString)
+                                }).length || //if the length is 0 then it returns false
+                            filteredBlog.challenges.filter( //iterate over the challenges array
+                                filterChallenge => {
+                                    return filterChallenge.toLowerCase().includes(userFilterString)
+                                }).length ||
+                                filteredBlog.week_dates.toLowerCase().includes(userFilterString)
+                            
+                    }
+                )
+
+                blogEl.innerHTML = ""
+
+                blogsFilter.forEach( returnedBlog => {
+                    blogEl.innerHTML = `<h1>Blog Exists</h1>`
+                })
+           
+            } else {
+                produceBlog({
+                    "target": {
+                        "classList": ["page-1"]
+                    }
+                })
+            }
+        }
+    )//end of blog filter
 
 /*
 clear innerHTML
