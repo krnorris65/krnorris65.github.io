@@ -4,6 +4,8 @@ const adminDatabase = JSON.parse(localStorage.getItem("adminDatabase")) || {}
 //add key of blog if doesnt exist create an empty array
 adminDatabase.blog = adminDatabase.blog || []
 
+//sort blogs in descending order by id property
+adminDatabase.blog.sort((p, n) => n.id - p.id)
 
 //id generator
 const blogIdGenerator = function* (num) {
@@ -70,7 +72,7 @@ submitButton.addEventListener("click", function() {
     
     const createBlog = newBlogObject(idVal, titleVal, publishedVal, weekVal, authorVal, celebrationsArray, challengesArray, tagsVal.split(",")) //takes the values of the form elements and puts them into the newBlogObjectFunction
     
-    adminDatabase.blog.unshift(createBlog)
+    adminDatabase.blog.push(createBlog)
 
     localStorage.setItem("adminDatabase", JSON.stringify(adminDatabase));
     
