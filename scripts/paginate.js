@@ -1,15 +1,9 @@
-const paginate = (items, paginationElClass, outputElClass) => {
+const paginate = (items, paginationElId, outputElId) => {
     const totalItems = items.length
     const itemsPerPage = 5
     const numberOfPages = Math.ceil(totalItems / itemsPerPage)
-    const paginationEl = document.querySelector(`.${paginationElClass}`) //defined in parameters of function
-    const outputEl = document.querySelector(`.${outputElClass}`) //defined in parameters of function
-
-    //clear DOM
-    const clearDOM = () => {
-        outputEl.innerHTML = ""
-    }
-
+    const paginationEl = document.querySelector(`#${paginationElId}`) //defined in parameters of function
+    const outputEl = document.querySelector(`#${outputElId}`) //defined in parameters of function
 
     // Build the DOM string for the pagination links in the footer
     let paginationString = "<ul>";
@@ -28,7 +22,7 @@ const paginate = (items, paginationElClass, outputElClass) => {
 
     //function to invoke when user clicks pagination link at bottom of page
     function produceItems(event) {
-        clearDOM(); //clear inner html for blog section
+        outputEl.innerHTML = "" //clear inner html for blog section
 
         //what did the user click
         const currentPage = parseInt ( //parse since the array will return a string
