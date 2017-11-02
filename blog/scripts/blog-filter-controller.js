@@ -85,9 +85,15 @@ if(blogItems > 0) {
                     }
                 )
 
+                if(blogsFilter.length === 0) {
+                    blogEl.innerHTML = `
+                        <h3>Search Results Not Found</h3>`
+                } else {
                     //clear DOM
                     blogEl.innerHTML = ""
                     updateDOM(blogsFilter) //add filtered blogs to DOM
+                }
+
             } else {
                 paginate(
                     blogDatabase,
