@@ -83,3 +83,4 @@ submitButton.addEventListener("click", function() {
 
 clearButton.addEventListener("click", resetValues)
 
+console.log("hi")

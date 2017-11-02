@@ -3,8 +3,8 @@ const blogItems = blogDatabase.length; //number of blog posts
 const blogEl = document.getElementById("blog-posts") //write blogs to DOM
 
 //update DOM with blog posts
-const updateDOM = (blogArray) => {
-    blogArray.forEach (
+const updateDOM = (itemArray) => {
+    itemArray.forEach (
         function(currentBlog) { 
             let finalBlogString = ""
             

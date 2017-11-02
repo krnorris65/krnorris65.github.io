@@ -103,3 +103,5 @@ challengeButton.addEventListener("click", addButton)
 //add eventListener to both celebration and challenge elements for remove button
 celebrationEl.addEventListener("click", removeButton)
 challengeEl.addEventListener("click", removeButton)
+
+//testing uglify

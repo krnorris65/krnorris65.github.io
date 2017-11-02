@@ -15,4 +15,4 @@ for (let i = 0; i < storedProjectList.length; i++) {
             <p class="project-description">${project.description}</p>
         </article>
         `
-    }
+    } //testing uglify

@@ -9,4 +9,4 @@ for (let i = 0; i < storedSocialList.length; i++) {
     socialElement.innerHTML += `
     <li class="social"><a href="${currentSocial.url}">${currentSocial.service}</a></li>    
     `
-}
+} //testing uglify

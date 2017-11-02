@@ -1,0 +1,31 @@
+{
+  "name": "krnorris65.github.io",
+  "version": "1.0.0",
+  "description": "Kristen Norris's personal site",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/krnorris65/krnorris65.github.io.git"
+  },
+  "keywords": [
+    "nss",
+    "personal",
+    "site"
+  ],
+  "author": "Kristen Norris <krnorris65@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/krnorris65/krnorris65.github.io/issues"
+  },
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-uglify": "git://github.com/gruntjs/grunt-contrib-uglify.git#harmony",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-eslint": "^20.1.0",
+    "load-grunt-tasks": "^3.5.2"
+  },
+  "dependencies": {}
+}
