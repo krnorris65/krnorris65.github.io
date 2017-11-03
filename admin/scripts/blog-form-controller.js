@@ -5,14 +5,18 @@ const adminLogin = {
 }
 
 const loginButton = document.getElementById("blog_login_submit")
+const usernameEl = document.getElementById("blog_username")
+const passwordEl = document.getElementById("blog_password")
 
 const submitLogin = () => {
-    if(document.getElementById("blog_username").value === adminLogin.username && document.getElementById("blog_password").value === adminLogin.password) {
+    if(usernameEl.value === adminLogin.username && passwordEl.value === adminLogin.password) {
         const blogFormEl = document.getElementById("blog_form")
         const loginEl = document.getElementById("blog_login")
         loginEl.style.visibility = "hidden"
         blogFormEl.style.visibility = "visible"
     } else {
+        usernameEl.value = ""
+        passwordEl.value = ""
         alert("Login Not Valid")
     }
 }
