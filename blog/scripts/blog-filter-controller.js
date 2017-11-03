@@ -56,7 +56,7 @@ const updateDOM = (itemArray) => {
 if(blogItems > 0) {
     
     paginate(
-        blogDatabase,
+        blogDatabase.sort((p, n) => n.id - p.id),
         "blog-paginator",
         "blog-posts"
     )
