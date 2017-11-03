@@ -18,3 +18,7 @@ label {
     display: block;
     padding-top: 5px;
 }
+
+#blog_login label {
+    display: inline;
+}
