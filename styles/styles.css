@@ -5,7 +5,10 @@ body {
     width: 90%;
     margin: 4em auto;
 }
- 
+
+.hideContent {
+    display: none
+}
 
 h1 {
     color: indigo;

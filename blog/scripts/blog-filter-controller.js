@@ -10,7 +10,7 @@ const updateDOM = (itemArray) => {
             
             finalBlogString += `
                 <!-- Beginning of Blog Post ${currentBlog.title} -->
-                <article id="blog-${currentBlog.id}" class="blog">
+                <article id="blog-${currentBlog.id}" class="blog" contenteditable="false">
                 <header>
                 <h2 class="weekNum">${currentBlog.title}</h2>
                 <p class="weekDate">${currentBlog.week_dates}</p>

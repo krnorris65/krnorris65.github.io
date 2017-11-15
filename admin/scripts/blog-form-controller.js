@@ -12,8 +12,8 @@ const submitLogin = () => {
     if(usernameEl.value === adminLogin.username && passwordEl.value === adminLogin.password) {
         const blogFormEl = document.getElementById("blog_form")
         const loginEl = document.getElementById("blog_login")
-        loginEl.style.visibility = "hidden"
-        blogFormEl.style.visibility = "visible"
+        loginEl.classList.add("hideContent")
+        blogFormEl.classList.remove("hideContent")
     } else {
         usernameEl.value = ""
         passwordEl.value = ""
