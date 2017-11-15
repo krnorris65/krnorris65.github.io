@@ -13,11 +13,11 @@
             </nav>
             <!--End Navigation-->
             <header class="page-header">
-                    <h1>Create a Blog Post</h1>
+                    
             </header>
 
             <section id="blog_login">
-                <h3>Please login to create blog post</h3>
+                <h3>Please login to create or edit blog posts</h3>
                 <label for="blog_username">Username:</label>
                     <input type="text" name="username" id="blog_username" placeholder="username">
                 <label for="blog_password">Password:</label>
@@ -26,6 +26,7 @@
             </section>
 
             <section id="blog_form" class="hideContent">
+                <h1>Create a New Blog Post</h1>
                 <section id="form_new-blog">
                         <label for="form_title">Title</label>
                             <input type="text" name="title" id="form_title" placeholder="title" class="form_field">
@@ -64,10 +65,15 @@
                     <button id="button_clear-blog">Clear</button>
             </section>
 
+            <section id="blog_editContent">
+
+            </section>
+
         <script src="../build/nav-factory.min.js"></script>
         <script src="../build/nav-controller.min.js"></script>
         <script src="./scripts/blog-form-controller.js"></script>
         <script src="./scripts/blog-submit-controller.js"></script>
+        <script src="./scripts/blog-edit-list.js"></script>
         <!-- <script src="./build/blog-form-controller.min.js"></script> -->
         <!-- <script src="./build/blog-submit-controller.min.js"></script> -->
     </body>

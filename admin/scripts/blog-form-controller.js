@@ -1,19 +1,22 @@
 //this javascript file gives functionlity to the buttons within the Create Blog Form
 const adminLogin = {
-    "username": "Kristen",
-    "password": "nssblog"
+    "username": "k",
+    "password": "n"
 }
 
 const loginButton = document.getElementById("blog_login_submit")
 const usernameEl = document.getElementById("blog_username")
 const passwordEl = document.getElementById("blog_password")
 
+//functionality to submit login button
 const submitLogin = () => {
     if(usernameEl.value === adminLogin.username && passwordEl.value === adminLogin.password) {
         const blogFormEl = document.getElementById("blog_form")
         const loginEl = document.getElementById("blog_login")
+        const editEl = document.getElementById("blog_editContent")
         loginEl.classList.add("hideContent")
         blogFormEl.classList.remove("hideContent")
+        editEl.classList.remove("hideContent")
     } else {
         usernameEl.value = ""
         passwordEl.value = ""
