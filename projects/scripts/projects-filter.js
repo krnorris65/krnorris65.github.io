@@ -49,6 +49,9 @@ if (projectItems > 0) {
                     updateDOM(projectFilter)
 
                 }
+            } else {
+                projectsEl.innerHTML = " "
+                updateDOM(projectDatabase)
             }
         }
     )
