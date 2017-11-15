@@ -19,14 +19,14 @@ if(blogDatabase.length > 0) {
             return b.id - a.id
         }
     ).forEach( blog => {
+        
+        
         const blogList = document.createElement("li")
         blogList.appendChild(document.createTextNode(`${blog.title} `))
 
-        const editButton = document.createElement("a")
+        const editButton = document.createElement("button")
         editButton.appendChild(document.createTextNode("Edit"))
         editButton.id = "edit_" + `${blog.id}`
-        editButton.href = "#"
-        editButton.addEventListener("click", editContent)
 
         blogList.appendChild(editButton)
         editEl.appendChild(blogList)
