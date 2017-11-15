@@ -25,6 +25,8 @@ const updateDOM = (itemArray) => {
 
 
 if (projectItems > 0) {
+    updateDOM(projectDatabase) //loads all projects on page load
+
     document.querySelector("input[name='projectsFilter']").addEventListener(
         "keyup",
         event => {
@@ -33,7 +35,7 @@ if (projectItems > 0) {
                 const userFilterString = event.target.value.toLowerCase()
 
                 const projectFilter = projectDatabase.filter(filteredProject => {
-                        return filteredProject.title.toLowerCase().includes(userFilterString) ||
+                        return filteredProject.name.toLowerCase().includes(userFilterString) ||
                         filteredProject.description.toLowerCase().includes(userFilterString)
                     }
                 )
@@ -43,12 +45,10 @@ if (projectItems > 0) {
                         <h3>Search Results Not Found</h3>
                     `
                 } else {
-                    projectsEl.innerHTML = ""
+                    projectsEl.innerHTML = " "
                     updateDOM(projectFilter)
 
                 }
-            } else {
-                updateDOM(projectDatabase)
             }
         }
     )

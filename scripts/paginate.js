@@ -32,7 +32,6 @@ const paginate = (items, paginationElId, outputElId) => {
             })
             .split("-")[1] //split class using the "-" as the delimiter, [0]=page [1]=#, currentPage = #
         );
-
         
         //change class of previous arrow
         if ((currentPage - 1) === 0 ) { //if the current page -1 is 0 
