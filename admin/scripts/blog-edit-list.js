@@ -1,4 +1,4 @@
-// const editHeaderEl = require("./blog-edit-button")
+// const editContent = require("./blog-edit-button")
 const editEl = document.getElementById("blog_editContent")
 const blogDatabase = JSON.parse(localStorage.getItem("adminDatabase")).blog; //getting blog info
 
@@ -21,17 +21,12 @@ if(blogDatabase.length > 0) {
     ).forEach( blog => {
         const blogList = document.createElement("li")
         blogList.appendChild(document.createTextNode(`${blog.title} `))
-        
-        // blogString += `
-        //     <li>${blog.title}</li>
-        // `
-
-        // <a id="edit_${blog.id}"href="#">Edit</a>
 
         const editButton = document.createElement("a")
         editButton.appendChild(document.createTextNode("Edit"))
         editButton.id = "edit_" + `${blog.id}`
         editButton.href = "#"
+        editButton.addEventListener("click", editContent)
 
         blogList.appendChild(editButton)
         editEl.appendChild(blogList)

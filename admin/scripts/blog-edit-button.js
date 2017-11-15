@@ -13,4 +13,4 @@ const editBlog = (event) => {
     console.log(idBlogEdit)
 }
 
-module.exports = editBlog
+// module.exports = editBlog
