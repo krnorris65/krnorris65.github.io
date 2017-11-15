@@ -2,8 +2,15 @@
 
 const editBlog = (event) => {
 
-    if(event.target.id) {
-        
-    }
+    const idBlogEdit = parseInt(
+        Array.from(event.target.classList)
+            .find(editClass => {
+                if(editClass.startsWith("edit_")) return editClass
+            })
+            .split("_")[1]
+    ) //gets the class of 
 
+    console.log(idBlogEdit)
 }
+
+module.exports = editBlog
