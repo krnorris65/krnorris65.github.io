@@ -47,7 +47,6 @@ if (projectItems > 0) {
                 } else {
                     projectsEl.innerHTML = " "
                     updateDOM(projectFilter)
-
                 }
             } else {
                 projectsEl.innerHTML = " "
