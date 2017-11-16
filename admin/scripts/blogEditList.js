@@ -1,8 +1,24 @@
-// const editContent = require("./blog-edit-button")
+// const editContent = require("./blogEditButton")
 const editEl = document.getElementById("blog_editContent")
 const blogDatabase = JSON.parse(localStorage.getItem("adminDatabase")).blog; //getting blog info
 
 //if there are blogs in local storage, then display their title in the Edit Blog section with an edit button (sort by id). 
+
+
+const editContent = (event) => {
+    
+        const idBlogEdit = parseInt(
+            Array.from(event.target.classList)
+                .find(editClass => {
+                    if(editClass.startsWith("edit_")) return editClass
+                })
+                .split("_")[1]
+        ) //gets the class of 
+    
+        const editThis = blogDatabase.filter( cblog => idBlogEdit === cblog.id)[0]
+        console.log(editThis)
+}
+
 
 if(blogDatabase.length > 0) {
     // adds header text to edit blog section
@@ -26,7 +42,8 @@ if(blogDatabase.length > 0) {
 
         const editButton = document.createElement("button")
         editButton.appendChild(document.createTextNode("Edit"))
-        editButton.id = "edit_" + `${blog.id}`
+        editButton.className = "edit_" + `${blog.id}`
+        editButton.addEventListener("click", editContent)
 
         blogItem.appendChild(editButton)
         blogListEl.appendChild(blogItem)
