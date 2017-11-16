@@ -17,6 +17,60 @@ const editContent = (event) => {
     
         const editThis = blogDatabase.filter( cblog => idBlogEdit === cblog.id)[0]
         console.log(editThis)
+
+        const blogListEl = document.getElementById("blogList")
+        
+        blogListEl.innerHTML = ""
+
+        const displayEditBlog = eBlog => { 
+            let editBlogString = ""
+            
+            editBlogString += `
+                <!-- Beginning of Blog Post ${eBlog.title} -->
+                <article id="blog-${eBlog.id}" class="blog" contenteditable="true">
+                <header>
+                <h2 class="weekNum">${eBlog.title}</h2>
+                <p class="weekDate">${eBlog.week_dates}</p>
+                </header>
+                
+                <section>
+                <h3>Celebrations & Inspirations</h3>
+                <ul>`
+        
+            //iterates over celebration array
+            eBlog.celebrations.forEach(celebration => {
+                editBlogString += `<li>${celebration}</li>`;
+            })
+            
+            editBlogString += `
+                </ul>
+                </section>
+                
+                <section>
+                <h3>Challenges & Hang-Ups</h3>
+                <ul>`
+            
+            //iterates over challenges array
+            eBlog.challenges.forEach(challenge => {
+                editBlogString += `<li>${challenge}</li>`;
+            })
+            
+            editBlogString += `
+                </ul>
+                </section>
+                
+                <footer>
+                <span>Posted by ${eBlog.author} on ${eBlog.published}</time></span>
+                </footer>
+                <!-- End of Blog Post ${eBlog.week_num} -->
+                `
+            //update DOM
+            blogListEl.innerHTML += editBlogString;
+        }
+
+        displayEditBlog(editThis)
+
+
 }
 
 
@@ -30,6 +84,7 @@ if(blogDatabase.length > 0) {
 
     //creates an unordered list for the list of blogs
     const blogListEl = document.createElement("ul")
+    blogListEl.id = "blogList"
     editEl.appendChild(blogListEl)
     
     //iterates through existing blogs and adds them to the the blog list with an edit button
