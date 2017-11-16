@@ -26,8 +26,7 @@ const editContent = (event) => {
             let editBlogString = ""
             
             editBlogString += `
-                <!-- Beginning of Blog Post ${eBlog.title} -->
-                <article id="blog-${eBlog.id}" class="blog" contenteditable="true">
+                <article id="edit-${eBlog.id}" class="blog" contenteditable="true">
                 <header>
                 <h2 class="weekNum">${eBlog.title}</h2>
                 <p class="weekDate">${eBlog.week_dates}</p>
@@ -62,7 +61,6 @@ const editContent = (event) => {
                 <footer>
                 <span>Posted by ${eBlog.author} on ${eBlog.published}</time></span>
                 </footer>
-                <!-- End of Blog Post ${eBlog.week_num} -->
                 `
             //update DOM
             blogListEl.innerHTML += editBlogString;
@@ -70,6 +68,9 @@ const editContent = (event) => {
 
         displayEditBlog(editThis)
 
+        const updateButton = document.createElement("button")
+        updateButton.appendChild(document.createTextNode("Update Blog"))
+        blogListEl.appendChild(updateButton)
 
 }
 
