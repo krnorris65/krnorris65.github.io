@@ -1,11 +1,19 @@
-const domEl = require("../scripts/domElements")
+const domEl = require("./domElements")
+
+const outputEl = domEl()
 
 const displayPage = (pageHeader, pageContent) => {
 
-    domEl.header.html(pageHeader) //adds the page header to the dom
+    const headerEl = outputEl.header
+    
+    headerEl.html(pageHeader) //adds the page header to the dom
 
-    domEl.content.html(pageContent) //adds the content of page to the dom
+    const contentEl = outputEl.content
+    
+    contentEl.html(pageContent) //adds the content of page to the dom
 
+    console.log(headerEl)
 }
+
 
 module.exports = displayPage
