@@ -26,8 +26,8 @@ navigation.forEach(
         navEl.classList.add("navLink")
 
         const navLink = document.createElement("a")
-        navEl.href = "#"
-        navEl.appendChild(document.createTextNode(page.display))
+        navLink.href = "#"
+        navLink.appendChild(document.createTextNode(page.display))
 
         navEl.appendChild(navLink)
         navList.appendChild(navEl)
