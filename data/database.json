@@ -1,64 +1,130 @@
 {
-	"blog": [{
-		"id": 4,
-		"title": "Week 4",
-		"published": "2017-10-27",
-		"week_dates": "October 23 - 27, 2017",
-		"author": "Kristen Norris",
-		"celebrations": ["Created a factory function to make updating my blog page easier", "Learned how to have a split screen view on my laptop", "Successfully created a blog form that allows me to add blog posts through the blog admin page, save them to local storage and update the blog page"],
-		"challenges": ["Understanding chaining array methods", "Understanding the Lexscopistan Heap Skope exercise"],
-		"tags": [
-			["blogs", " scope", " array methods", " factory functions"]
-		]
-	}, {
-		"id": 3,
-		"title": "Week 3",
-		"published": "2017-10-20",
-		"week_dates": "October 16 - 20, 2017",
-		"author": "Kristen Norris",
-		"celebrations": ["Watched NSS grad, Aimee Knight’s talk about <a href='https://www.youtube.com/watch?v=B22o_yeDE_s' target='_blank'>“Getting Comfortable with being Uncomfortable”</a>", "Learning how to effectively work in a group to complete a challenge (pagination) that was given the day before the project was due", "Getting better at commenting my code so I know what I did when I look back at it later on"],
-		"challenges": ["Understanding how to create pagination", "Breaking my code by forgetting a parenthesis in the Colored-Reindeer exercise", "Remembering everything"],
-		"tags": [
-			["pagination", " NSS grad"]
-		]
-	}, {
-		"id": 2,
-		"title": "Week 2",
-		"published": "2017-10-13",
-		"week_dates": "October 9 - 13, 2017",
-		"author": "Kristen Norris",
-		"celebrations": ["Finally figured out how to get the Cash-to-Coin exercise to work", "Created a dynamic navigation bar for group project", "Successfully created a group website using GitHub"],
-		"challenges": ["Figuring out how to include embedded Google Maps into the Contact Page of our group project", "Managed to accidently pull someone else’s branch into my feature branch", "Dealing with pushing and pulling branches in GitHub"],
-		"tags": [
-			["github", " javascript"]
-		]
-	}, {
-		"id": 1,
-		"title": "Week 1",
-		"published": "2017-10-06",
-		"week_dates": "October 2 - 6, 2017",
-		"author": "Kristen Norris",
-		"celebrations": ["Got to see Cohort 21 present their Front-End Capstone projects", "Successfully set-up the framework for my personal site and connected it to GitHub", "Was able to figure out the Overly Excited JavaScript exercise without feeling completely overwhelmed"],
-		"challenges": ["Remembering all of the commands for the terminal", "Figuring out the best way to organize code", "Not sure where to start with the Cash-to-Coin JavaScript exercise"],
-		"tags": [
-			["personal site", " javascript", " github"]
-		]
-	}, {
-		"id": 5,
-		"title": "Week 5",
-		"published": "2017-11-03",
-		"week_dates": "October 30 - November 3, 2017",
-		"author": "Kristen Norris",
-		"celebrations": ["Created a separate pagination JavaScript file so that pagination can easily be added to other pages", "Added a Search bar to my blog page", "Was able to get out of the infinite loop I (accidentally) created and complete part of the Lexscopistan Heap Skope exercise", "Added password protection to my \"create blog post\" form"],
-		"challenges": ["Completing the second part of the Lexscopistan Heap Skope exercise where the gem values don’t need to be hard coded", "Figuring out how to create the Search bar on my blog page so that it was filtering through the unordered lists", "Adding Grunt and ESLint to my personal site"],
-		"tags": [
-			["pagination", " JavaScript", " password protection", " Grunt", " ESLint"]
-		]
-	}],
+	"blog": [
+		{
+			"id": 4,
+			"title": "Week 4",
+			"published": "2017-10-27",
+			"week_dates": "October 23 - 27, 2017",
+			"author": "Kristen Norris",
+			"celebrations": ["Created a factory function to make updating my blog page easier", "Learned how to have a split screen view on my laptop", "Successfully created a blog form that allows me to add blog posts through the blog admin page, save them to local storage and update the blog page"],
+			"challenges": ["Understanding chaining array methods", "Understanding the Lexscopistan Heap Skope exercise"],
+			"tags": ["blogs", " scope", " array methods", " factory functions"]
+		}, 
+		{
+			"id": 3,
+			"title": "Week 3",
+			"published": "2017-10-20",
+			"week_dates": "October 16 - 20, 2017",
+			"author": "Kristen Norris",
+			"celebrations": ["Watched NSS grad, Aimee Knight’s talk about <a href='https://www.youtube.com/watch?v=B22o_yeDE_s' target='_blank'>“Getting Comfortable with being Uncomfortable”</a>", "Learning how to effectively work in a group to complete a challenge (pagination) that was given the day before the project was due", "Getting better at commenting my code so I know what I did when I look back at it later on"],
+			"challenges": ["Understanding how to create pagination", "Breaking my code by forgetting a parenthesis in the Colored-Reindeer exercise", "Remembering everything"],
+			"tags": ["pagination", " NSS grad"]
+		}, 
+		{
+			"id": 2,
+			"title": "Week 2",
+			"published": "2017-10-13",
+			"week_dates": "October 9 - 13, 2017",
+			"author": "Kristen Norris",
+			"celebrations": ["Finally figured out how to get the Cash-to-Coin exercise to work", "Created a dynamic navigation bar for group project", "Successfully created a group website using GitHub"],
+			"challenges": ["Figuring out how to include embedded Google Maps into the Contact Page of our group project", "Managed to accidently pull someone else’s branch into my feature branch", "Dealing with pushing and pulling branches in GitHub"],
+			"tags": ["github", " javascript"]
+		}, 
+		{
+			"id": 1,
+			"title": "Week 1",
+			"published": "2017-10-06",
+			"week_dates": "October 2 - 6, 2017",
+			"author": "Kristen Norris",
+			"celebrations": ["Got to see Cohort 21 present their Front-End Capstone projects", "Successfully set-up the framework for my personal site and connected it to GitHub", "Was able to figure out the Overly Excited JavaScript exercise without feeling completely overwhelmed"],
+			"challenges": ["Remembering all of the commands for the terminal", "Figuring out the best way to organize code", "Not sure where to start with the Cash-to-Coin JavaScript exercise"],
+			"tags": ["personal site", " javascript", " github"]
+		}, 
+		{
+			"id": 5,
+			"title": "Week 5",
+			"published": "2017-11-03",
+			"week_dates": "October 30 - November 3, 2017",
+			"author": "Kristen Norris",
+			"celebrations": ["Created a separate pagination JavaScript file so that pagination can easily be added to other pages", "Added a Search bar to my blog page", "Was able to get out of the infinite loop I (accidentally) created and complete part of the Lexscopistan Heap Skope exercise", "Added password protection to my \"create blog post\" form"],
+			"challenges": ["Completing the second part of the Lexscopistan Heap Skope exercise where the gem values don’t need to be hard coded", "Figuring out how to create the Search bar on my blog page so that it was filtering through the unordered lists", "Adding Grunt and ESLint to my personal site"],
+			"tags": ["pagination", " JavaScript", " password protection", " Grunt", " ESLint"]
+		}
+	],
 	"contact": {
 		"social": [
-			{"service":"Facebook","handle":"Kristen Norris","url":"https://www.facebook.com/kris10norris"},{"service":"Instagram","handle":"Kris10Rose65","url":"https://www.instagram.com/kris10rose65/"},{"service":"LinkedIn","handle":"Kristen Norris","url":"https://www.linkedin.com/in/kris10norris/"}
+			{
+				"service":"Facebook",
+				"handle":"Kristen Norris",
+				"url":"https://www.facebook.com/kris10norris"
+			},
+			{
+				"service":"Instagram",
+				"handle":"Kris10Rose65",
+				"url":"https://www.instagram.com/kris10rose65/"
+			},
+			{
+				"service":"LinkedIn",
+				"handle":"Kristen Norris",
+				"url":"https://www.linkedin.com/in/kris10norris/"
+			}
 		],
 		"email": "krnorris65@gmail.com"
-	}
+	},
+	"resume": [
+		{
+			"company": "Monroe Harding",
+			"position": "Development Specialist",
+			"location": "Nashville, TN",
+			"startDate": "January 2016",
+			"endDate": "October 2017",
+			"summary": "Offered general support to the development team.",
+			"responsibilities": "tracking donations and making sure donors were properly acknowledged, assisting with marketing efforts, creating a dashboard to report fundraising and outreach progress each month, and assisted with the annual fall fundraiser."
+		}, 
+		{
+			"company": "Room In The Inn",
+			"position": "Veterans Case Manager",
+			"location": "Nashville, TN",
+			"startDate": "May 2015",
+			"endDate": "November 2015",
+			"summary": "Provided case management to homeless veterans in the Veterans Per Diem program.",
+			"responsibilities": "assisting with daily functions, tracking and reporting demographic information for grant purposes, creating and distributing a bi-weekly chore chart, and managing TN-WITS billing for the Guest House Recovery Program."
+		}, 
+		{
+			"company": "Room In The Inn",
+			"position": "Case Manager",
+			"location": "Nashville, TN",
+			"startDate": "August 2013",
+			"endDate": "May 2015",
+			"summary": "Provided case management to homeless individuals and families.",
+			"responsibilities": "managing a caseload of over 300 homeless individuals, helping individuals acquire the necessary documents to obtain housing, maintaining our database to ensure information is properly tracked, and supporting the day-to-day operations of the activity center."
+		}, 
+		{
+			"company": "Room In The Inn",
+			"position": "Jesuit Volunteer/Odyssey Assitant",
+			"location": "Nashville, TN",
+			"startDate": "August 2012",
+			"endDate": "August 2013",
+			"summary": "Helped with running a post-treatment recovery program for chronically homeless men.",
+			"responsibilities": "managing volunteers, conducting daily community meetings, planning recreational activities, and leading a weekly mediation class."
+		}, 
+		{
+			"company": "Re-Member",
+			"position": "Program Supervisor",
+			"location": "Pine Ridge, SD",
+			"startDate": "June 2012",
+			"endDate": "July 2012",
+			"summary": "Carried out various tasks to ensure the weekly volunteer program ran smoothly.",
+			"responsibilities": "assisting the Construction Coordinators, preparing lunches, cleaning the facility and answering questions from volunteers."
+		}
+	],
+	"projects": [
+		{
+			"name": "Personal Site",
+			"date_completed": "in progress",
+			"technologies_used": "HTML, CSS, JS",
+			"teammates": "n/a",
+			"description": "description of project"
+		}
+	]
 }

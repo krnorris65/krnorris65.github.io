@@ -11,7 +11,7 @@ const resume = {
 
 const contact = {
     "page" : "Contact",
-    "link" : "../contact/index.html"
+    "link" : "#"
 };
 
 const projects = {

@@ -1,10 +1,11 @@
+//generates content for contact page
 const contactContent = () => {
     $.ajax({
         "url": "data/database.json",
         "method": "GET"
     }).then(
-        function (contactInfo) {
-            const contactDb = contactInfo.contact
+        contactInfo => {
+            const contactDb = contactInfo.contact;
 
             let contactString = "";
 
@@ -30,6 +31,8 @@ const contactContent = () => {
                     <li class="social"><a href="${site.url}">${site.service}</a></li>
                 `
             })
+
+            //closing tags for unordered list and contact section
             contactString += `
                 </ul>
                 </section>
