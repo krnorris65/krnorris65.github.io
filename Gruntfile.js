@@ -1,16 +1,16 @@
 module.exports = function(grunt) {
-    require('load-grunt-tasks')(grunt);
+    require("load-grunt-tasks")(grunt);
     
     // Project configuration.
     grunt.initConfig({
-        pkg: grunt.file.readJSON('package.json'),
+        pkg: grunt.file.readJSON("package.json"),
         watch: {
             scripts: {
-            files: ['**/scripts/*.js', "!node_modules/**/*.js"],
-            tasks: ["eslint", "browserify", "uglify"],
-            options: {
-                spawn: false,
-            },
+                files: ["**/scripts/*.js", "!node_modules/**/*.js"],
+                tasks: ["eslint", "browserify", "uglify"],
+                options: {
+                    spawn: false,
+                },
             }
         },
         browserify: {
@@ -55,4 +55,4 @@ module.exports = function(grunt) {
     // Default task(s).
     grunt.registerTask("default", ["watch", "browserify", "uglify", "eslint"]);
   
-  };
+};

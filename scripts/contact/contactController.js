@@ -1,7 +1,7 @@
 //generates content for contact page
 const contactContent = () => {
     $.ajax({
-        "url": "data/database.json",
+        "url": "./data/database.json",
         "method": "GET"
     }).then(
         contactInfo => {

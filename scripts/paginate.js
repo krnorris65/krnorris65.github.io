@@ -10,7 +10,7 @@ const paginate = (items, paginationElId, outputElId) => {
     paginationString += "<a id='previous' href='#'>&lt;</a>"; //generates previous button
     for (let i = 0; i < numberOfPages; i++) {
         paginationString += ` <li><a class="page page-${i+1}" href="#">${i+1}</a></li>` //generates the correct number of blog page buttons and gives them a class of blogPage and page-#
-    };
+    }
     paginationString += " <a id='next' class='page-2' href='#'>&gt;</a>"; //generates next button, default class is page-2
     paginationString += "</ul>";
 
@@ -27,10 +27,10 @@ const paginate = (items, paginationElId, outputElId) => {
         //what did the user click
         const currentPage = parseInt ( //parse since the array will return a string
             Array.from(event.target.classList) //target classes on the clicked pagination link
-            .find(pageClass => { 
-                if (pageClass.startsWith("page-")) return pageClass //if class starts with "page-" then return that class
-            })
-            .split("-")[1] //split class using the "-" as the delimiter, [0]=page [1]=#, currentPage = #
+                .find(pageClass => { 
+                    if (pageClass.startsWith("page-")) return pageClass //if class starts with "page-" then return that class
+                })
+                .split("-")[1] //split class using the "-" as the delimiter, [0]=page [1]=#, currentPage = #
         );
         
         //change class of previous arrow
@@ -61,21 +61,21 @@ const paginate = (items, paginationElId, outputElId) => {
     // Get the array of pagination anchor tags we added to the DOM
     const pageLinks = document.getElementsByClassName("page");
     
-        // Add event listeners to each <a> element in the pagination
-        for (let l = 0; l < pageLinks.length; l++) {
-            let thisBlogLink = pageLinks[l];
-            thisBlogLink.addEventListener("click", produceItems, false) //when pagination link is clicked, run produceItems function 
+    // Add event listeners to each <a> element in the pagination
+    for (let l = 0; l < pageLinks.length; l++) {
+        let thisBlogLink = pageLinks[l];
+        thisBlogLink.addEventListener("click", produceItems, false) //when pagination link is clicked, run produceItems function 
+    }
+    
+    //default so that first page loads
+    produceItems({
+        "target": {
+            "classList": ["page-1"]
         }
+    });
     
-        //default so that first page loads
-        produceItems({
-            "target": {
-                "classList": ["page-1"]
-            }
-        });
-    
-        //event listeners for previous and next elements
-        previousEl.addEventListener("click", produceItems, false);
-        nextEl.addEventListener("click", produceItems, false);
+    //event listeners for previous and next elements
+    previousEl.addEventListener("click", produceItems, false);
+    nextEl.addEventListener("click", produceItems, false);
 
 }//end of paginate

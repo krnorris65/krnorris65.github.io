@@ -1,4 +1,4 @@
-const domEl = require("../domElements")
+const domEl = require("../scripts/domElements")
 
 const displayPage = (pageHeader, pageContent) => {
 

@@ -13,7 +13,7 @@ let paginationString = "<ul>";
 paginationString += "<a id='previous' href='#'>&lt;</a>"; //generates previous button
 for (let i = 0; i < numberOfPages; i++) {
     paginationString += ` <li><a class="blogPage page-${i+1}" href="#">${i+1}</a></li>` //generates the correct number of blog page buttons and gives them a class of blogPage and page-#
-};
+}
 paginationString += " <a id='next' class='page-2' href='#'>&gt;</a>"; //generates next button, default class is page-2
 paginationString += "</ul>";
 
@@ -30,10 +30,10 @@ function produceBlog(event) {
     //what did the user click
     const currentPage = parseInt ( //parse since the array will return a string
         Array.from(event.target.classList) //target classes on the clicked pagination link
-        .find(pageClass => { 
-            if (pageClass.startsWith("page-")) return pageClass //if class starts with "page-" then return that class
-        })
-        .split("-")[1] //split class using the "-" as the delimiter, [0]=page [1]=#, currentPage = #
+            .find(pageClass => { 
+                if (pageClass.startsWith("page-")) return pageClass //if class starts with "page-" then return that class
+            })
+            .split("-")[1] //split class using the "-" as the delimiter, [0]=page [1]=#, currentPage = #
     );
     
     //change class of previous arrow
@@ -128,17 +128,17 @@ previousEl.addEventListener("click", produceBlog, false);
 nextEl.addEventListener("click", produceBlog, false);
 /*End of Pagination */
 
-    //filter blog pages
-    document.querySelector("input[name='blogFilter']").addEventListener(
-        "keyup",
-        event => {
-            if(event.target.value.length >= 3) {
-                //Filter 
-                const userFilterString = event.target.value.toLowerCase()
+//filter blog pages
+document.querySelector("input[name='blogFilter']").addEventListener(
+    "keyup",
+    event => {
+        if(event.target.value.length >= 3) {
+            //Filter 
+            const userFilterString = event.target.value.toLowerCase()
 
-                const blogsFilter = storedBlogDatabase.filter(
-                    filteredBlog => {
-                        return filteredBlog.title.toLowerCase().includes(userFilterString) || //look through titles
+            const blogsFilter = storedBlogDatabase.filter(
+                filteredBlog => {
+                    return filteredBlog.title.toLowerCase().includes(userFilterString) || //look through titles
                             filteredBlog.celebrations.filter( //iterate over the celebrations array
                                 filterCelebration => {
                                     return filterCelebration.toLowerCase().includes(userFilterString)
@@ -149,15 +149,15 @@ nextEl.addEventListener("click", produceBlog, false);
                                 }).length ||
                                 filteredBlog.week_dates.toLowerCase().includes(userFilterString)
                             
-                    }
-                )
+                }
+            )
 
-                blogEl.innerHTML = ""
+            blogEl.innerHTML = ""
 
-                blogsFilter.forEach(returnedBlog => { 
-                    let finalBlogString = ""
+            blogsFilter.forEach(returnedBlog => { 
+                let finalBlogString = ""
                     
-                    finalBlogString += `
+                finalBlogString += `
                         <!-- Beginning of Blog Post ${returnedBlog.title} -->
                         <article id="blog-${returnedBlog.id}" class="blog">
                         <header>
@@ -169,12 +169,12 @@ nextEl.addEventListener("click", produceBlog, false);
                         <h3>Celebrations & Inspirations</h3>
                         <ul>`
                 
-                    //iterates over celebration array
-                    returnedBlog.celebrations.forEach(function(celebration) {
-                        finalBlogString += `<li>${celebration}</li>`;
-                    })
+                //iterates over celebration array
+                returnedBlog.celebrations.forEach(function(celebration) {
+                    finalBlogString += `<li>${celebration}</li>`;
+                })
                     
-                    finalBlogString += `
+                finalBlogString += `
                         </ul>
                         </section>
                         
@@ -182,12 +182,12 @@ nextEl.addEventListener("click", produceBlog, false);
                         <h3>Challenges & Hang-Ups</h3>
                         <ul>`
                     
-                    //iterates over challenges array
-                    returnedBlog.challenges.forEach(function(challenge) {
-                        finalBlogString += `<li>${challenge}</li>`;
-                    })
+                //iterates over challenges array
+                returnedBlog.challenges.forEach(function(challenge) {
+                    finalBlogString += `<li>${challenge}</li>`;
+                })
                     
-                    finalBlogString += `
+                finalBlogString += `
                         </ul>
                         </section>
                         
@@ -196,15 +196,15 @@ nextEl.addEventListener("click", produceBlog, false);
                         </footer>
                         <!-- End of Blog Post ${returnedBlog.week_num} -->
                         `
-                    //update DOM
-                    blogEl.innerHTML += finalBlogString;
-                })
-            } else {
-                produceBlog({
-                    "target": {
-                        "classList": ["page-1"]
-                    }
-                })
-            }
+                //update DOM
+                blogEl.innerHTML += finalBlogString;
+            })
+        } else {
+            produceBlog({
+                "target": {
+                    "classList": ["page-1"]
+                }
+            })
         }
-    )//end of blog filter
+    }
+)//end of blog filter

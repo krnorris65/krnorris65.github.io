@@ -96,11 +96,11 @@ const challengeInput = function() {
 const addButton = function(event) {
     const idOfAddButtonClicked = event.target.id //gets id of button clicked
     const addButtonType = idOfAddButtonClicked.split("-")[1] //get type 'celebration' or 'challenge'. the beginning of both buttons is "add-"
-        if(addButtonType === "celebration") { //if type is celebration insert
-            celebrationInput()
-        } if(addButtonType === "challenge") {
-            challengeInput()
-        }
+    if(addButtonType === "celebration") { //if type is celebration insert
+        celebrationInput()
+    } if(addButtonType === "challenge") {
+        challengeInput()
+    }
 }
 
 //functionality to remove button
