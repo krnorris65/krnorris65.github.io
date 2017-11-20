@@ -3,11 +3,10 @@ const projectDOM = require("./productsInfo")
 
 const projectsContent = () => {
     return $.ajax({
-        "url": "data/database.json",
+        "url": "https://personal-site-cf1b8.firebaseio.com/projects.json",
         "method": "GET"  
     }).then(
-        projectInfo => {
-            const projectDb = projectInfo.projects;
+        projectDb => {
             let projectString = "";
             
             //builds search input on DOM
