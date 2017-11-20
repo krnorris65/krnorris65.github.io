@@ -1,6 +1,6 @@
 //generates content for projects page
 const projectDOM = require("./productsInfo")
-const projectFilter = require("../pageFilter")
+// const projectFilter = require("../pageFilter")
 
 const projectsContent = () => {
     return $.ajax({
