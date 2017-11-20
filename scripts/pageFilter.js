@@ -1,7 +1,7 @@
 
-const filterPage = (dbArray, action, selector) => {
+const filterPage = (dbArray, func, selector) => {
     if (dbArray.length > 0) {
-        action(dbArray) //loads all projects on page load
+        func(dbArray) //initial page load
 
         selector.addEventListener(
             "keyup",
@@ -21,13 +21,15 @@ const filterPage = (dbArray, action, selector) => {
                         <h3>Search Results Not Found</h3>
                     `
                     } else {
-                        action(pageFilter)
+                        func(pageFilter) //displays filtered items
                     }
                 } else {
                     projectsEl.innerHTML = " "
-                    action(dbArray)
+                    func(dbArray) //displays initial page load if selector has less than three characters
                 }
             }
         )
     }
 }
+
+module.exports =  filterPage

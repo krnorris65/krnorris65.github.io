@@ -1,5 +1,6 @@
 //generates content for projects page
 const projectDOM = require("./productsInfo")
+const projectFilter = require("../pageFilter")
 
 const projectsContent = () => {
     return $.ajax({
@@ -18,9 +19,10 @@ const projectsContent = () => {
             projectString += `
             <section id="projects">
             `
-            
+
             //iterates through projects
             const pInfo = projectDOM(projectDb)
+
 
             projectString += pInfo
             

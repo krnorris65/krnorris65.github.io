@@ -8,7 +8,7 @@ const displayProject = () => {
     projectContent().then( productString => {
         const projectHeader = "<h1>Kristen's Projects</h1>"
         const projectInfo = productString
-        
+    
         displayPage(projectHeader, projectInfo)
     })
 
