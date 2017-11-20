@@ -24,6 +24,7 @@ navigation.forEach(
     page => {
         const navEl = document.createElement("li")
         navEl.classList.add("navLink")
+        navEl.id = `nav_${page.display}`
 
         const navLink = document.createElement("a")
         navLink.href = "#"

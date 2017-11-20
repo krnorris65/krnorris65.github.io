@@ -4,18 +4,13 @@ $(document).ready(function () {
     
     //display contact
     const contactPage = require("./contact/displayContact")
-    contactPage()
-
-    
-
-    
-
-    
+    // contactPage()
 
     
     //display projects
-    // const projectPage = require("./projects/displayProjects")
-    
+    const projectPage = require("./projects/displayProjects")
+    projectPage()
+
     //display resume
     
     //display blog

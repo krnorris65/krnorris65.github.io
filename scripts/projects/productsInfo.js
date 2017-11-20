@@ -1,8 +1,8 @@
-const updateDOM = (itemArray) => {
+const projectDOM = (itemArray) => {
+    let projectList = ""
     itemArray.forEach(
         project => {
-            let finalString = ""
-            finalString += `
+            projectList += `
             <article class="project">
                 <h2 class="project-name">${project.name}</h2>
                 <p class="project-date"><b>Date Completed:</b> ${project.date_completed}</p>
@@ -11,9 +11,11 @@ const updateDOM = (itemArray) => {
                 <p class="project-description">${project.description}</p>
             </article>
             `
-            return finalString
+
         }
     )
+    return projectList
+    
 }
 
-module.exports = updateDOM
+module.exports = projectDOM
