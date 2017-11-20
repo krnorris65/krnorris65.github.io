@@ -1,6 +1,6 @@
 //generates content for projects page
+const projectFilter = require("../pageFilter")
 const projectDOM = require("./productsInfo")
-// const projectFilter = require("../pageFilter")
 
 const projectsContent = () => {
     return $.ajax({
@@ -11,18 +11,23 @@ const projectsContent = () => {
             let projectString = "";
             
             //builds search input on DOM
-            projectString += `
-            <p>Search: <input type="text" name="projectsFilter" placeholder="search all projects"></p>
-            `
+            // projectString += `
+            // <p>Search: <input type="text" name="projectsFilter" placeholder="search all projects"></p>
+            // `
+
+            const searchBar = $("#page-filter").append(`<p>Search: <input type="text" name="projectsFilter" placeholder="search all projects"></p>`)
             
             // builds project section
             projectString += `
             <section id="projects">
             `
 
-            //iterates through projects
-            const pInfo = projectDOM(projectDb)
+            const pSearch = $("input[name='projectsFilter']")[0]
 
+            //iterates through projects
+            // const pInfo = projectDOM(projectDb)
+            const pInfo = projectFilter(projectDb, projectDOM, pSearch)
+            debugger
 
             projectString += pInfo
             

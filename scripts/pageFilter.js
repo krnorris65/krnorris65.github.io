@@ -1,8 +1,13 @@
+const domEl = require("./domElements")
 
 const filterPage = (dbArray, func, selector) => {
+    const outputEl = domEl()
+    let pageLoad = ""
+    
     if (dbArray.length > 0) {
-        func(dbArray) //initial page load
-
+        
+        pageLoad = func(dbArray) //initial page load
+        
         selector.addEventListener(
             "keyup",
             event => {
@@ -16,20 +21,22 @@ const filterPage = (dbArray, func, selector) => {
                     }
                     )
 
+                    debugger
+
                     if(pageFilter.length === 0) {
-                        projectsEl.innerHTML = `
-                        <h3>Search Results Not Found</h3>
-                    `
+                        pageLoad = "<h3>Search Results Not Found</h3>"
                     } else {
-                        func(pageFilter) //displays filtered items
+                        pageLoad = func(pageFilter) //displays filtered items
                     }
                 } else {
-                    projectsEl.innerHTML = " "
-                    func(dbArray) //displays initial page load if selector has less than three characters
+                    // outputEl.content.html = " "
+                    pageLoad= func(dbArray) //displays initial page load if selector has less than three characters
                 }
             }
         )
+
     }
+    return pageLoad
 }
 
 module.exports =  filterPage

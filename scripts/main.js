@@ -9,11 +9,11 @@ $(document).ready(function () {
     
     //display projects
     const projectPage = require("./projects/displayProjects")
-    // projectPage()
+    projectPage()
 
     //display resume
     const resumePage = require("./resume/displayResume")
-    resumePage()
+    // resumePage()
     
     //display blog
 
