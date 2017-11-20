@@ -4,11 +4,14 @@ const displayPage = require("../displayPage")
 const contactConent = require("./contactController")
 
 const displayContact = () => {
-    
-    const contactHeader = "<h1>Contact Me</h1>"
-
-    const contactInfo = contactConent()
-
-    displayPage(contactHeader, contactInfo)
-
+    contactConent().then(contactString => {
+        
+        const contactHeader = "<h1>Contact Me</h1>"
+        const contactInfo = contactString
+        
+        displayPage(contactHeader, contactInfo) //displayPage needs to be within the contactContent().then because it is dependent on the string that is returned when the then function runs
+        
+    })
 }
+
+module.exports = displayContact

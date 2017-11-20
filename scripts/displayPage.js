@@ -12,7 +12,6 @@ const displayPage = (pageHeader, pageContent) => {
     
     contentEl.html(pageContent) //adds the content of page to the dom
 
-    console.log(headerEl)
 }
 
 

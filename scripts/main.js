@@ -4,6 +4,14 @@ $(document).ready(function () {
     
     //display contact
     const contactPage = require("./contact/displayContact")
+    contactPage()
+
+    
+
+    
+
+    
+
     
     //display projects
     // const projectPage = require("./projects/displayProjects")
