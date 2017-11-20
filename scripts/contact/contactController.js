@@ -2,12 +2,11 @@
 const contactContent = () => {
 
     return $.ajax({ //need to return ajax function so that contactContent can access the string returned in .then()
-        "url": "./data/database.json",
+        "url": "https://personal-site-cf1b8.firebaseio.com/contact.json",
         "method": "GET"
     })
         .then(
-            contactInfo => {
-                const contactDb = contactInfo.contact;
+            contactDb => {
                 let contactString = "";
 
                 //builds contact by email section
