@@ -1,9 +1,11 @@
-const paginate = (items, paginationElId, outputElId) => {
+const domEl = require("./domElements")
+
+const paginate = (items, func) => {
+    const outputEl = domEl()
     const totalItems = items.length
     const itemsPerPage = 5
     const numberOfPages = Math.ceil(totalItems / itemsPerPage)
-    const paginationEl = document.querySelector(`#${paginationElId}`) //defined in parameters of function
-    const outputEl = document.querySelector(`#${outputElId}`) //defined in parameters of function
+    const paginationEl = outputEl.footer
 
     // Build the DOM string for the pagination links in the footer
     let paginationString = "<ul>";
@@ -14,7 +16,7 @@ const paginate = (items, paginationElId, outputElId) => {
     paginationString += " <a id='next' class='page-2' href='#'>&gt;</a>"; //generates next button, default class is page-2
     paginationString += "</ul>";
 
-    paginationEl.innerHTML = paginationString; //add to DOM
+    paginationEl.html(paginationString); //add to DOM
 
     // references to the next and previous arrows
     const previousEl = document.getElementById("previous"); 
@@ -54,7 +56,7 @@ const paginate = (items, paginationElId, outputElId) => {
         const itemsToDisplay = items.slice(begin, end);
 
         //iterate through itemsToDisplay and inserts them into DOM
-        updateDOM(itemsToDisplay) //make sure that function is called updateDOM  on the page-controller
+        func(itemsToDisplay) //make sure that function is called updateDOM  on the page-controller
     
     }//end of produceItems
 
@@ -62,10 +64,9 @@ const paginate = (items, paginationElId, outputElId) => {
     const pageLinks = document.getElementsByClassName("page");
     
     // Add event listeners to each <a> element in the pagination
-    for (let l = 0; l < pageLinks.length; l++) {
-        let thisBlogLink = pageLinks[l];
-        thisBlogLink.addEventListener("click", produceItems, false) //when pagination link is clicked, run produceItems function 
-    }
+    pageLinks.forEach( link => {
+        link.addEventListener("click", produceItems, false) //when pagination link is clicked, run produceItems function 
+    })
     
     //default so that first page loads
     produceItems({

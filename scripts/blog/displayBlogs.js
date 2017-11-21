@@ -1,3 +1,15 @@
+//this module will display the blogs
+
+const displayPage = require("../displayPage")
+
+const displayBlog = () => {
+
+    displayPage("test", "blogs")
+
+}
+
+module.exports = displayBlog
+
 // const displayBlog = () => {
 //     <header class="page-header">
 //     <h1>My Nashville Software School Experience</h1>
