@@ -7,6 +7,9 @@ const domElements = () => {
         },
         "content": {
             value: $("#page-content")
+        },
+        "filter": {
+            value: $("#page-filter")
         }
     })
     return domObject

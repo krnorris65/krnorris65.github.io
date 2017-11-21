@@ -1,14 +1,18 @@
 const domEl = require("./domElements")
 
-const filterPage = (dbArray, func, selector) => {
+const filterPage = (dbArray, func) => {
     const outputEl = domEl()
     let pageLoad = ""
     
     if (dbArray.length > 0) {
-        
+        //create search input
+        outputEl.filter.append(`<p>Search: <input type="text" name="pageFilter" placeholder="search all"></p>`)
+
+        const pageSearch = $("input[name='pageFilter']")[0]
+            
         pageLoad = func(dbArray) //initial page load
         
-        selector.addEventListener(
+        pageSearch.addEventListener(
             "keyup",
             event => {
                 if(event.target.value.length >= 3) {

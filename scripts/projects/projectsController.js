@@ -10,23 +10,15 @@ const projectsContent = () => {
         projectDb => {
             let projectString = "";
             
-            //builds search input on DOM
-            // projectString += `
-            // <p>Search: <input type="text" name="projectsFilter" placeholder="search all projects"></p>
-            // `
-
-            const searchBar = $("#page-filter").append(`<p>Search: <input type="text" name="projectsFilter" placeholder="search all projects"></p>`)
-            
+    
             // builds project section
             projectString += `
             <section id="projects">
             `
 
-            const pSearch = $("input[name='projectsFilter']")[0]
-
             //iterates through projects
             // const pInfo = projectDOM(projectDb)
-            const pInfo = projectFilter(projectDb, projectDOM, pSearch)
+            const pInfo = projectFilter(projectDb, projectDOM)
             debugger
 
             projectString += pInfo
