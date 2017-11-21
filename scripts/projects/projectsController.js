@@ -8,27 +8,9 @@ const projectsContent = () => {
         "method": "GET"  
     }).then(
         projectDb => {
-            let projectString = "";
             
-    
-            // builds project section
-            projectString += `
-            <section id="projects">
-            `
+            return projectFilter(projectDb, projectDOM)
 
-            //iterates through projects
-            // const pInfo = projectDOM(projectDb)
-            const pInfo = projectFilter(projectDb, projectDOM)
-            debugger
-
-            projectString += pInfo
-            
-            //closing tag for project section
-            projectString += `
-                </section>
-            `
-
-            return projectString
         }
     )
 

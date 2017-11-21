@@ -15,5 +15,3 @@ const displayProject = () => {
 }
 
 module.exports = displayProject
-
-//instead of having the filter on the projects page, it might be better to have it on this page

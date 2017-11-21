@@ -1,8 +1,13 @@
 const projectDOM = (itemArray) => {
-    let projectList = ""
+    let projectString = ""
+    // builds project section
+    projectString += `
+    <section id="projects">
+    `
+    //iterate through each project and add to projectString
     itemArray.forEach(
         project => {
-            projectList += `
+            projectString += `
             <article class="project">
                 <h2 class="project-name">${project.name}</h2>
                 <p class="project-date"><b>Date Completed:</b> ${project.date_completed}</p>
@@ -14,7 +19,12 @@ const projectDOM = (itemArray) => {
 
         }
     )
-    return projectList
+
+    //closing tag for project section
+    projectString += `
+    </section>
+`
+    return projectString
     
 }
 
