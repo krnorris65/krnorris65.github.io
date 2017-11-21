@@ -21,8 +21,7 @@ const filterPage = (dbArray, func) => {
                     //convert what is being filtered to lowercase
                     const userFilterString = event.target.value.toLowerCase()
 
-                    //looks through all the keys of each object to see if the filtered string appears anywhere, if so it returns the item
-                    const pageFilter = dbArray.filter(filteredItem => {
+                    let pageFilter = dbArray.filter(filteredItem => {
                         for(key in filteredItem) {
                             const item = filteredItem[key]
 

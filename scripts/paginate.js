@@ -24,7 +24,6 @@ const paginate = (items, func) => {
 
     //function to invoke when user clicks pagination link at bottom of page
     function produceItems(event) {
-        outputEl.innerHTML = "" //clear inner html for blog section
 
         //what did the user click
         const currentPage = parseInt ( //parse since the array will return a string
@@ -56,7 +55,10 @@ const paginate = (items, func) => {
         const itemsToDisplay = items.slice(begin, end);
 
         //iterate through itemsToDisplay and inserts them into DOM
-        func(itemsToDisplay) //make sure that function is called updateDOM  on the page-controller
+        const pageLoad = func(itemsToDisplay) //function to update dom
+        debugger
+
+        outputEl.content.html(pageLoad)
     
     }//end of produceItems
 
@@ -80,3 +82,5 @@ const paginate = (items, func) => {
     nextEl.addEventListener("click", produceItems, false);
 
 }//end of paginate
+
+module.exports = paginate
