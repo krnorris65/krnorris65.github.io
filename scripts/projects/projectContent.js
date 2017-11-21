@@ -1,4 +1,4 @@
-const projectDOM = (itemArray) => {
+const projectContent = (itemArray) => {
     let projectString = ""
     // builds project section
     projectString += `
@@ -22,10 +22,10 @@ const projectDOM = (itemArray) => {
 
     //closing tag for project section
     projectString += `
-    </section>
-`
+        </section>
+    `
     return projectString
     
 }
 
-module.exports = projectDOM
+module.exports = projectContent

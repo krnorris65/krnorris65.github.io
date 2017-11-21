@@ -1,7 +1,7 @@
-//generates content for contact page
-const contactContent = () => {
+//controls how the content is written to the dom for contact page
+const contactDOM = () => {
 
-    return $.ajax({ //need to return ajax function so that contactContent can access the string returned in .then()
+    return $.ajax({ //need to return ajax function so that contactDOM can access the string returned in .then()
         "url": "https://personal-site-cf1b8.firebaseio.com/contact.json",
         "method": "GET"
     })
@@ -43,4 +43,4 @@ const contactContent = () => {
         )
 }
 
-module.exports = contactContent
+module.exports = contactDOM

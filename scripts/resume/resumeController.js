@@ -1,6 +1,6 @@
-//generates content for resume page
+//controls how the content is written to the dom for resume page
 
-const resumeContent = () => {
+const resumeDOM = () => {
 
     return $.ajax({
         "url": "https://personal-site-cf1b8.firebaseio.com/resume.json",
@@ -32,4 +32,4 @@ const resumeContent = () => {
 
 }
 
-module.exports = resumeContent
+module.exports = resumeDOM

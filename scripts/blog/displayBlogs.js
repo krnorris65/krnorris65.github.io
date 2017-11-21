@@ -1,10 +1,20 @@
 //this module will display the blogs
 
 const displayPage = require("../displayPage")
+const blogContent = require("./blogController")
 
 const displayBlog = () => {
 
-    displayPage("test", "blogs")
+    
+    blogContent().then(
+        blogString => {
+            const blogHeader = "<h1>My Nashville Software School Experience</h1>"
+            const blogInfo = blogString
+
+            displayPage(blogHeader, blogInfo)
+        }
+    )
+
 
 }
 
