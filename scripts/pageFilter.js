@@ -21,11 +21,17 @@ const filterPage = (dbArray, func) => {
                     //convert what is being filtered to lowercase
                     const userFilterString = event.target.value.toLowerCase()
 
+                    //looks through all the keys of each object to see if the filtered string appears anywhere, if so it returns the item
                     const pageFilter = dbArray.filter(filteredItem => {
-                        return filteredItem.name.toLowerCase().includes(userFilterString) ||
-                        filteredItem.description.toLowerCase().includes(userFilterString)
-                    }
-                    )
+                        for(key in filteredItem) {
+                            const item = filteredItem[key]
+
+                            if(item.toLowerCase().includes(userFilterString)) {
+                                return item
+                            }
+                        }
+                    })
+
                 
                     //output.content.html(pageLoad) repopulates the content area when user types in search bar
                     if(pageFilter.length === 0) {
