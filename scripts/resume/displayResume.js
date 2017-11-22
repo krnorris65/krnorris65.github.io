@@ -12,6 +12,8 @@ const displayResume = () => {
         displayPage(resumeHeader, resumeInfo)
     })
 
+    $("#page-filter").html("")
+    $("#page-footer").html("")
 }
 
 module.exports = displayResume

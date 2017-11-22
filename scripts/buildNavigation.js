@@ -30,11 +30,6 @@ navigation.forEach(
         navLink.className = `nav_${page.display.toLowerCase()}`
         navLink.appendChild(document.createTextNode(page.display))
 
-        // navLink.addEventListener("click", e => {
-        //     const pageName = e.target.className.split("_")[1]
-        //     console.log(pageName)
-
-        // })
 
         navEl.appendChild(navLink)
         navList.appendChild(navEl)

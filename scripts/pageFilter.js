@@ -7,7 +7,9 @@ const filterPage = (dbArray, func) => {
     
     if (dbArray.length > 0) {
         //create search input
-        outputEl.filter.append("<p>Search: <input type=\"text\" name=\"pageFilter\" placeholder=\"search all\"></p>")
+        const searchBar = "<p>Search: <input type=\"text\" name=\"pageFilter\" placeholder=\"search all\"></p>"
+
+        outputEl.filter.html(searchBar)
         
         //targets input to add an eventListener
         const pageSearch = $("input[name='pageFilter']")[0]

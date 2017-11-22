@@ -10,6 +10,8 @@ const displayProject = () => {
         const projectInfo = productString
     
         displayPage(projectHeader, projectInfo)
+        
+        $("#page-footer").html("")
     })
 
 }

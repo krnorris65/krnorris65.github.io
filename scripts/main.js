@@ -21,6 +21,7 @@ $(document).ready(function () {
     const blogPage = require("./blog/displayBlogs")
     $(".nav_blog").on("click", blogPage)
 
+    const footer = require("./buildFooter")
 
 })
 

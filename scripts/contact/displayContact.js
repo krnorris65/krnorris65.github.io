@@ -11,6 +11,8 @@ const displayContact = () => {
         
         displayPage(contactHeader, contactInfo) //displayPage needs to be within the contactContent().then because it is dependent on the string that is returned when the then function runs
         
+        $("#page-filter").html("")
+        $("#page-footer").html("")
     })
 }
 
