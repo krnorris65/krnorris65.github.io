@@ -1,7 +1,7 @@
 {
     const footerEl = $("#site-footer")
 
-    // footerEl.append("<span>Kristen</span>")
+    footerEl.append("<a href=\"#\" id=\"site_admin\">Admin</a>")
 
     // footerEl.create("button")
 }
