@@ -24,16 +24,23 @@ navigation.forEach(
     page => {
         const navEl = document.createElement("li")
         navEl.classList.add("navLink")
-        navEl.id = `nav_${page.display}`
 
         const navLink = document.createElement("a")
         navLink.href = "#"
+        navLink.className = `nav_${page.display.toLowerCase()}`
         navLink.appendChild(document.createTextNode(page.display))
+
+        // navLink.addEventListener("click", e => {
+        //     const pageName = e.target.className.split("_")[1]
+        //     console.log(pageName)
+
+        // })
 
         navEl.appendChild(navLink)
         navList.appendChild(navEl)
     }
 )
+
 navElement.appendChild(navList)
 
 module.exports = null

@@ -4,20 +4,22 @@ $(document).ready(function () {
     
     //display contact
     const contactPage = require("./contact/displayContact")
-    // contactPage()
-
+    $(".nav_contact").on("click", contactPage)
+    
     
     //display projects
     const projectPage = require("./projects/displayProjects")
+    $(".nav_projects").on("click", projectPage)
     // projectPage()
-
+    
     //display resume
     const resumePage = require("./resume/displayResume")
+    $(".nav_resume").on("click", resumePage)
     // resumePage()
     
     //display blog
     const blogPage = require("./blog/displayBlogs")
-    blogPage()
+    $(".nav_blog").on("click", blogPage)
 
 
 })
