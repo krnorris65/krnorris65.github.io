@@ -28,5 +28,7 @@
     "grunt-eslint": "^20.1.0",
     "load-grunt-tasks": "^3.5.2"
   },
-  "dependencies": {}
+  "dependencies": {
+    "firebase-admin": "^5.5.1"
+  }
 }

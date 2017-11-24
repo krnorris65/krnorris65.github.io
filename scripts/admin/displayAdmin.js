@@ -1,3 +1,10 @@
+// const admin = require("firebase-admin")
+const serviceAccount = require("../admin/personal-site-firebaseAdmin.json")
+
+admin.initializeApp({
+    credential: admin.credential.cert(serviceAccount),
+    databaseURL: "https://personal-site-cf1b8.firebaseio.com"
+});
 
 const displayPage = require("../displayPage")
 const blogForm = require("./blogForm")
