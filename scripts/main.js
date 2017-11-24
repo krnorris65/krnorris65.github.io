@@ -19,6 +19,9 @@ $(document).ready(function () {
     
     const blogPage = require("./blog/displayBlogs")
     $(".nav_blog").on("click", blogPage) //will load blog page when nav link is clicked
+    
+    const adminPage = require("./admin/displayAdmin")
+    $("#site_admin").on("click", adminPage) //will load admin page when link in footer is clicked
 
 
 })

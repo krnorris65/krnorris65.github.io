@@ -1,27 +1,4 @@
 //this javascript file gives functionlity to the buttons within the Create Blog Form
-const adminLogin = {
-    "username": "Kristen",
-    "password": "nssblog"
-}
-
-const loginButton = document.getElementById("blog_login_submit")
-const usernameEl = document.getElementById("blog_username")
-const passwordEl = document.getElementById("blog_password")
-
-const submitLogin = () => {
-    if(usernameEl.value === adminLogin.username && passwordEl.value === adminLogin.password) {
-        const blogFormEl = document.getElementById("blog_form")
-        const loginEl = document.getElementById("blog_login")
-        loginEl.style.visibility = "hidden"
-        blogFormEl.style.visibility = "visible"
-    } else {
-        usernameEl.value = ""
-        passwordEl.value = ""
-        alert("Login Not Valid")
-    }
-}
-
-loginButton.addEventListener("click", submitLogin)
 
 //generator function to create a unique id for the celebration/challenge created by user. starts at 2 since the first input is already on the page
 const inputIdGen = function* () {
