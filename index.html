@@ -28,15 +28,31 @@
             <!-- add page footer -->
         </footer>
 
+
+        <!-- add firebase -->
+
+        <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
+        <script>
+          // Initialize Firebase
+          var config = {
+            apiKey: "AIzaSyAG02bCF_4PbwXP9Y7sse2MNoFk6lkeCtU",
+            authDomain: "personal-site-cf1b8.firebaseapp.com",
+            databaseURL: "https://personal-site-cf1b8.firebaseio.com",
+            projectId: "personal-site-cf1b8",
+            storageBucket: "personal-site-cf1b8.appspot.com",
+            messagingSenderId: "179421668219"
+          };
+          firebase.initializeApp(config);
+        </script>
+
+        <!-- add jquery -->
         <script
         src="https://code.jquery.com/jquery-3.2.1.min.js"
         integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
         crossorigin="anonymous"></script>
 
+        <!-- browserified script files-->
         <script src="./build/bundle.js"></script>
-
-        <!-- <script src="./scripts/nav-factory.js"></script> -->
-        <!-- <script src="./scripts/nav-controller.js"></script> -->
 
 
     </body>
