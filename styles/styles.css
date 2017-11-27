@@ -5,6 +5,10 @@ body {
     width: 90%;
     margin: 4em auto;
 }
+
+.hide {
+    display: none
+}
  
 
 h1 {
