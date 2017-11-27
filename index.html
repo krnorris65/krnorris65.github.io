@@ -13,9 +13,15 @@
         <!--Navigation-->
         <nav id="nav-items"></nav> <!--section where navigation bar is populated -->
 
+        <div id="auth-login">
+            <span>Login:</span>
+            <input type="email" placeholder="email" id="auth-email">
+            <input type="password" placeholder="password" id="auth-pass">
+            <button id="auth-submit">Login</button>
+        </div>
+
         <div id="page">
             <section id="page-header" class="page-header"></section> <!-- section that page header is populated-->
-
 
             <section id="page-filter"></section> <!-- section that search bar is added with pageFilter -->
 
@@ -28,15 +34,16 @@
             <!-- add page footer -->
         </footer>
 
+
+
+        <!-- add jquery -->
         <script
         src="https://code.jquery.com/jquery-3.2.1.min.js"
         integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
         crossorigin="anonymous"></script>
 
+        <!-- browserified script files-->
         <script src="./build/bundle.js"></script>
-
-        <!-- <script src="./scripts/nav-factory.js"></script> -->
-        <!-- <script src="./scripts/nav-controller.js"></script> -->
 
 
     </body>
