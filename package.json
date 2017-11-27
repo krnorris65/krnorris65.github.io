@@ -29,6 +29,7 @@
     "load-grunt-tasks": "^3.5.2"
   },
   "dependencies": {
+    "firebase": "^4.6.2",
     "firebase-admin": "^5.5.1"
   }
 }
