@@ -23,8 +23,7 @@ $(document).ready(function () {
     const adminPage = require("./admin/displayAdmin")
     $("#site_admin").on("click", adminPage) //will load admin page when link in footer is clicked
 
-    const firebase = require("firebase")
-
+    const auth = require("./auth/authenticate")
 
 })
 
