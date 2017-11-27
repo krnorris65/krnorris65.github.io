@@ -2,6 +2,7 @@ const domEl = require("./domElements")
 
 const paginate = (items, func) => {
     const outputEl = domEl()
+    const contentEl = outputEl.content
     const totalItems = items.length
     const itemsPerPage = 5
     const numberOfPages = Math.ceil(totalItems / itemsPerPage)
@@ -56,9 +57,8 @@ const paginate = (items, func) => {
 
         //iterate through itemsToDisplay and inserts them into DOM
         const pageLoad = func(itemsToDisplay) //function to update dom
-        debugger
 
-        outputEl.content.html(pageLoad)
+        contentEl.html(pageLoad)
     
     }//end of produceItems
 
@@ -80,7 +80,6 @@ const paginate = (items, func) => {
     //event listeners for previous and next elements
     previousEl.addEventListener("click", produceItems, false);
     nextEl.addEventListener("click", produceItems, false);
-
 }//end of paginate
 
 module.exports = paginate
